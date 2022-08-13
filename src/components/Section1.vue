@@ -56,13 +56,13 @@
                     </v-text-field> -->
 
                     <v-text-field
-                    v-if="entityType_otherRequired"
+                        v-if="entityType_otherRequired"
                         outlined
-                        v-model="applicant.entityType_other"
+                        v-model="otherEntityField"
                         :counter="100"
-                        :error-messages="entityType_otherValidationMessage"
-                        @input="v$.applicant.entityType_other.$touch"
-                        @blur="v$.applicant.entityType_other.$touch"
+                        :error-messages="otherEntityFieldValidationMessage"
+                        @input="v$.otherEntityField.$touch"
+                        @blur="v$.otherEntityField.$touch"
                     >
                         <template v-slot:label>
                             <span class="required">If Others</span>
@@ -118,13 +118,13 @@
                         </template>
                     </v-text-field> -->
                     <v-text-field
-                     v-if="natureEntity_otherRequired"
+                        v-if="natureEntity_otherRequired"
                         outlined
-                        v-model="applicant.natureEntity_other"
+                        v-model="otherNatureField"
                         :counter="100"
-                        :error-messages="natureEntity_otherValidationMessage"
-                        @input="v$.applicant.natureEntity_other.$touch"
-                        @blur="v$.applicant.natureEntity_other.$touch"
+                        :error-messages="otherNatureFieldValidationMessage"
+                        @input="v$.otherNatureField.$touch"
+                        @blur="v$.otherNatureField.$touch"
                     >
                         <template v-slot:label>
                             <span class="required">If Others</span>
@@ -341,6 +341,7 @@ import { uenValidator } from "@/validations/uen";
 //import SectionMixin from "./SectionMixin.js";
 import { mapGetters, mapMutations } from "vuex";
 import { ApplicantDataModel } from "@/models/ApplicantDataModel";
+import { throws } from "assert";
 
 export default {
     name: "Section1",
@@ -359,7 +360,10 @@ export default {
             dateOfAppointment: "",
 
             entityType_otherRequired: false,
-            natureEntity_otherRequired: false
+            natureEntity_otherRequired: false,
+
+            otherEntityField: "",
+            otherNatureField: ""
 
             /*nameOfApplicant: "",
             entityType: "",
@@ -383,6 +387,26 @@ export default {
             dateOfAppointment: {
                 required: helpers.withMessage("This field is mandatory", required)
             },
+            otherEntityField: {
+                // required: helpers.withMessage("This field is mandatory", required)
+                      required: helpers.withMessage(
+                        "This field is mandatory",
+                        requiredIf(function() {
+                            return this.entityType_otherRequired; // return true if this field is required
+                        })
+                    ),
+                    max: maxLength(100)
+            },
+            otherNatureField: {
+                // required: helpers.withMessage("This field is mandatory", required)
+                      required: helpers.withMessage(
+                        "This field is mandatory",
+                        requiredIf(function() {
+                            return this.natureEntity_otherRequired; // return true if this field is required
+                        })
+                    ),
+                      max: maxLength(100)
+            },
             applicant: {
                 // 1A
                 nameOfApplicant: {
@@ -390,16 +414,17 @@ export default {
                     max: maxLength(100)
                 },
                 entityType: { required: helpers.withMessage("This field is mandatory", required) },
-                entityType_other: {
-                    // required: helpers.withMessage(
-                    //     "This field is mandatory",
-                    //     requiredIf(function() {
-                    //         return this.entityType_otherRequired; // return true if this field is required
-                    //     })
-                    // )
-                    // // required: requiredIf(this.entityType_otherRequired)
-                    // // required: helpers.withMessage("This field is mandatory", required)
-                },
+                // entityType_other: {
+                //     required: helpers.withMessage("This field is mandatory", required)
+                //     // required: helpers.withMessage(
+                //     //     "This field is mandatory",
+                //     //     requiredIf(function() {
+                //     //         return this.entityType_otherRequired; // return true if this field is required
+                //     //     })
+                //     // )
+                //     // // required: requiredIf(this.entityType_otherRequired)
+                //     // // required: helpers.withMessage("This field is mandatory", required)
+                // },
                 natureEntity: {
                     required: helpers.withMessage("This field is mandatory", required)
                 },
@@ -455,8 +480,9 @@ export default {
                 },
                 emailCheckbox: {
                     required: helpers.withMessage("This field is mandatory", required),
-                     emailCheckbox: helpers.withMessage("This field is mandatory to check", () =>
-                        this.applicant.emailCheckbox
+                    emailCheckbox: helpers.withMessage(
+                        "This field is mandatory to check",
+                        () => this.applicant.emailCheckbox
                     )
                 }
             }
@@ -480,6 +506,14 @@ export default {
         nameOfApplicantValidationMessage() {
             return this.v$.applicant.nameOfApplicant.$errors.find(e => e)?.$message ?? "";
         },
+
+        otherEntityFieldValidationMessage() {
+            return this.v$.otherEntityField.$errors.find(e => e)?.$message ?? "";
+        },
+        otherNatureFieldValidationMessage() {
+            return this.v$.otherNatureField.$errors.find(e => e)?.$message ?? "";
+        },
+
         entityTypeValidationMessage() {
             return this.v$.applicant.entityType.$errors.find(e => e)?.$message ?? "";
         },
@@ -521,7 +555,7 @@ export default {
         },
 
         isValid() {
-            return !this.v$.applicant.$invalid && !this.v$.dateOfAppointment.isValid;
+            return !this.v$.applicant.$invalid && !this.v$.dateOfAppointment.isValid && !this.v$.otherEntityField.$invalid && !this.v$.otherNatureField.$invalid;
             /*(!this.v$.nameOfApplicant.$invalid &&
                 !this.v$.entityType.$invalid &&
                 !this.v$.entityType_other.$invalid &&
@@ -552,14 +586,16 @@ export default {
         },
         updateEntityType_otherRequired() {
             this.entityType_otherRequired = this.applicant.entityType === "3" ? true : false;
-            this.applicant.entityType_other = "";
+            // this.applicant.entityType_other = "";
+            this.otherEntityField = "";
         },
         updateNatureEntity_otherRequired() {
             this.natureEntity_otherRequired = this.applicant.natureEntity === "2" ? true : false;
-            this.applicant.natureEntity_other = "";
+            this.otherNatureField = "";
         },
         validateSection() {
             console.log("section 1 validate");
+            // this.v$.otherEntityField.$touch();
             this.v$.$validate();
             /*this.v$.nameOfApplicant.$touch();
             this.v$.entityType.$touch();
@@ -580,6 +616,9 @@ export default {
             // console.log("Populate Info: " + this.getSection1);
             this.applicant = this.getSection1;
             this.dateOfAppointment = this.applicant.dateOfAppointment;
+            this.otherEntityField = this.applicant.entityType_other;
+            this.otherNatureField = this.applicant.natureEntity_other;
+
             this.entityType_otherRequired = this.applicant.entityType === "3" ? true : false;
             this.natureEntity_otherRequired = this.applicant.natureEntity === "2" ? true : false;
 
@@ -623,6 +662,9 @@ export default {
         //},
         async submit(fromSectionIndex, toSectionIndex) {
             this.applicant.dateOfAppointment = this.dateOfAppointment;
+            this.applicant.entityType_other = this.otherEntityField;
+            this.applicant.natureEntity_other = this.otherNatureField;
+
             let data = this.applicant;
             console.log("applicant: ", data);
 
@@ -631,7 +673,7 @@ export default {
         }
     },
     mounted() {
-        console.log('mounted section 1');
+        console.log("mounted section 1");
         this.populateData();
     },
     watch: {

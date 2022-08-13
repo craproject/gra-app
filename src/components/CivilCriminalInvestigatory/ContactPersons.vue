@@ -92,7 +92,7 @@
                     />
 
                     <!-- Identification Type -->
-                    <v-select
+                    <!-- <v-select
                         outlined
                         label="Identification Type"
                         :items="citizenshipTypeOptions"
@@ -101,6 +101,17 @@
                         v-model="editingItem.citizenshipType"
                         :error-messages="citizenshipTypeValidationMessage"
                         @change="v$.editingItem.citizenshipType.$touch;"
+                        @blur="v$.editingItem.citizenshipType.$touch"
+                    ></v-select> -->
+                    <v-select
+                        outlined
+                        label="Identification Type"
+                        :items="citizenshipTypeOptions"
+                        item-value="value"
+                        item-text="label"
+                        v-model="editingItem.citizenshipType"
+                        :error-messages="citizenshipTypeValidationMessage"
+                        @change="clearIdentificationFields"
                         @blur="v$.editingItem.citizenshipType.$touch"
                     ></v-select>
                     <!-- Identification Number -->
@@ -126,6 +137,8 @@
                         label="Country Identification Number"
                         v-model="editingItem.countryIdNumber"
                         :counter="100"
+                        :error-messages="countryIdNumberValidationMessage"
+
                     />
 
                     <!-- Country -->
@@ -217,7 +230,6 @@ import crudMixin from "@/mixins/crudMixin";
 import minAge from "@/validations/minAge";
 import { SCnricValidator } from "@/validations/uen";
 
-
 export default {
     name: "ContactPersons",
     setup() {
@@ -267,7 +279,7 @@ export default {
                             return this.editingItem.citizenshipType != "100000003"; // return true if this field is required
                         })
                     ),
-nric: helpers.withMessage("Invalid NRIC/FIN", () =>
+                    nric: helpers.withMessage("Invalid NRIC/FIN", () =>
                         SCnricValidator(this.editingItem.nric)
                     )
                     // required: helpers.withMessage("This field is mandatory", required),
@@ -283,9 +295,15 @@ nric: helpers.withMessage("Invalid NRIC/FIN", () =>
                     //     )
                     // )
                 },
-                //countryIdNumber: {
+                countryIdNumber: {
+                     required: helpers.withMessage(
+                        "This field is mandatory",
+                        requiredIf(function() {
+                            return this.editingItem.citizenshipType == "100000003"; // return true if this field is required
+                        })
+                    ),
                 //    required: helpers.withMessage("This field is mandatory", required)
-                //},
+                },
                 country: { required: helpers.withMessage("This field is mandatory", required) },
                 positionHeld: {
                     required: helpers.withMessage("This field is mandatory", required),
@@ -328,9 +346,9 @@ nric: helpers.withMessage("Invalid NRIC/FIN", () =>
         nricValidationMessage() {
             return this.v$.editingItem.nric.$errors.find(e => e)?.$message ?? "";
         },
-        //countryIdNumberValidationMessage() {
-        //    return this.v$.editingItem.countryIdNumber.$errors.find(e => e)?.$message ?? "";
-        //},
+        countryIdNumberValidationMessage() {
+           return this.v$.editingItem.countryIdNumber.$errors.find(e => e)?.$message ?? "";
+        },
         countryValidationMessage() {
             return this.v$.editingItem.country.$errors.find(e => e)?.$message ?? "";
         },
@@ -350,6 +368,11 @@ nric: helpers.withMessage("Invalid NRIC/FIN", () =>
     methods: {
         ...mapMutations(["setSection2B"]),
 
+        clearIdentificationFields() {
+            this.editingItem.nric = "";
+            this.editingItem.countryIdNumber = "";
+        },
+
         // CRUD actions
         addItem() {
             this.editingItem = new ContactPersonModel();
@@ -357,7 +380,7 @@ nric: helpers.withMessage("Invalid NRIC/FIN", () =>
         },
         validateSection() {
             //this.v$.haveEverBeenArrested.$touch();
-            this.v$.editingItem.name.$touch();
+            // this.v$.editingItem.name.$touch();
         },
         populateData() {
             //this.haveEverBeenArrested = this.getSection5A.haveEverBeenArrested;
@@ -365,7 +388,7 @@ nric: helpers.withMessage("Invalid NRIC/FIN", () =>
                 this.getSection2A.Sec_2_Yes_Table == undefined
                     ? []
                     : this.getSection2A.Sec_2_Yes_Table;
-                    // this.contactPersonTable=this.getSection2A.Sec_2_Yes_Table
+            // this.contactPersonTable=this.getSection2A.Sec_2_Yes_Table
             console.log("contactPersonTable: ", this.contactPersonTable);
         },
         buildApiData() {
@@ -397,12 +420,16 @@ nric: helpers.withMessage("Invalid NRIC/FIN", () =>
                 // Validate Contact Person Table
                 if (this.table) {
                     console.log("length ne: " + this.table.length);
-                    if (this.table?.length > 0) {
+                    if (this.table?.length > 0 && this.table?.length <= 5) {
                         this.showAlert = false;
                         this.alertMsg = "";
-                    } else {
+                    } else if(this.table?.length ==0) {
                         this.showAlert = true;
-                        this.alertMsg = "At least 1 Contact Person must be fill in";
+                        this.alertMsg = "At least one record must be filled in";
+                    }
+                    else if(this.table?.length >5) {
+                        this.showAlert = true;
+                        this.alertMsg = "Limit to 5 records";
                     }
 
                     //console.log("setSection2A Table 1: " + this.table),
@@ -413,7 +440,7 @@ nric: helpers.withMessage("Invalid NRIC/FIN", () =>
                     // });
                 } else {
                     this.showAlert = true;
-                    this.alertMsg = "At least 1 Contact Person must be fill in";
+                    this.alertMsg = "At least one record must be filled in";
                 }
             },
             deep: true

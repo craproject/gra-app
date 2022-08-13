@@ -419,7 +419,7 @@ export default {
 
             let newIndex = this.decreaseStepperIndex(currentIndex);
 
-            await this.submitAndNavigate(currentIndex, false);
+            await this.submitAndNavigate(currentIndex, true);
             this.stepperIndex = newIndex;
             this.setCurrentPageIndex(newIndex);
             this.setPreviousPageIndex(currentIndex);
