@@ -408,7 +408,11 @@ export default {
             // this.setCurrentPageIndex(nextSectionIndex);
             // this.stepperIndex = nextSectionIndex;
 
-            await this.submitAndNavigate(currentIndex, nextSectionIndex);
+            let submit = await this.submitAndNavigate(currentIndex, nextSectionIndex);
+            if (submit) {
+                this.setPreviousPageIndex(currentIndex);
+                this.setCurrentPageIndex(nextSectionIndex);
+            }
         },
         async prev() {
             this.isNavigateByStepClicked = false;
@@ -428,6 +432,9 @@ export default {
             // this.setCurrentPageIndex(prevSectionIndex);
             // this.stepperIndex = prevSectionIndex;
 
+            //prev dont need to validate
+            this.setPreviousPageIndex(currentIndex);
+            this.setCurrentPageIndex(prevSectionIndex);
             await this.submitAndNavigate(currentIndex, prevSectionIndex);
         },
         scrollTop() {
@@ -447,8 +454,6 @@ export default {
             this.loadingAction = "Saving";
             let currentSection = this.getSectionByIndex(fromSectionIndex);
 
-            this.setPreviousPageIndex(fromSectionIndex);
-
             // validate section for dispay Warning Uncomplete
             currentSection.validateSection();
             let boolIsValid = currentSection.isValid;
@@ -465,7 +470,7 @@ export default {
                 if (!this.UncompleteArray.includes(fromSectionIndex)) {
                     this.UncompleteArray.push(fromSectionIndex);
                 }
-                if (this.enableChecking) return;
+                if (this.enableChecking) return false;
             }
 
             // console.log("Uncomplete Array: " + this.UncompleteArray);
@@ -557,9 +562,10 @@ Please submit the relevant supporting documents via licensing@gra.gov.sg`;
             // if (toSectionIndex > this.lastStepperIndex) return; // Don't need to fetch new data if this is the last section
 
             this.stepperIndex = toSectionIndex;
-            this.setCurrentPageIndex(toSectionIndex);
-
+            // this.setPreviousPageIndex(fromSectionIndex);
+            // this.setCurrentPageIndex(toSectionIndex);
             this.scrollTop(); // Goto top
+            return true;
             // postGraData
             //  await this.$store.dispatch("postGraData", data);
             // Get data of next section

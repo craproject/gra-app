@@ -8,7 +8,7 @@
             <v-img
                 max-height="40"
                 max-width="20"
-                src="../../assets/singapore-lion-logo.png"
+                src="/img/singapore-lion-logo.png"
                 class="mx-2 my-1"
             ></v-img>
 

@@ -5,7 +5,7 @@
                 <v-img
                     max-height="40"
                     max-width="20"
-                    src="../../assets/singapore-lion-logo.png"
+                    src="/img/singapore-lion-logo.png"
                     class="mx-2 my-1"
                 ></v-img>
                 <span> A Singapore Government Agency Website</span>
@@ -16,7 +16,7 @@
             <v-img
                 max-height="100"
                 max-width="200"
-                src="../../assets/cra-logo.png"
+                src="/img/cra-logo.png"
                 class="my-5 mx-1"
             ></v-img>
 
