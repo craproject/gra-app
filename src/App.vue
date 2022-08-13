@@ -380,7 +380,7 @@ export default {
         async confirmedYes() {
             this.turnOffConfirmDialog();
 
-            await this.submitAndNavigate(this.stepperIndex, this.toSectionIndex);
+            // await this.submitAndNavigate(this.stepperIndex, this.toSectionIndex);
         },
         confirmedNo() {
             this.turnOffConfirmDialog();
@@ -394,48 +394,36 @@ export default {
         async next() {
             this.isNavigateByStepClicked = false;
             let currentIndex = this.stepperIndex;
+            let newIndex = this.increaseStepperIndex(currentIndex);
 
             // Validate
-            let isValidSection = this.validateSection(currentIndex);
-            if (!isValidSection && currentIndex === 0) {
-                this.addAppError("Please complete all mandatory fields before proceeding.");
-
-                return;
-            }
-
-            // Navigate
-            let nextSectionIndex = this.increaseStepperIndex(currentIndex);
-            // this.setCurrentPageIndex(nextSectionIndex);
-            // this.stepperIndex = nextSectionIndex;
-
-            let submit = await this.submitAndNavigate(currentIndex, nextSectionIndex);
-            if (submit) {
-                this.setPreviousPageIndex(currentIndex);
-                this.setCurrentPageIndex(nextSectionIndex);
-            }
-        },
-        async prev() {
-            this.isNavigateByStepClicked = false;
-            console.log("stepper index: " + this.stepperIndex);
-            let currentIndex = this.stepperIndex;
-
-            // Validate
-            let isValidSection = this.validateSection(currentIndex);
-            // if (!isValidSection) {
-            //     this.addAppError("Please full-fill the form before processing");
+            // let isValidSection = this.validateSection(currentIndex);
+            // if (!isValidSection && currentIndex === 0) {
+            //     this.addAppError("Please complete all mandatory fields before proceeding.");
 
             //     return;
             // }
 
-            // Navigate
-            let prevSectionIndex = this.decreaseStepperIndex();
-            // this.setCurrentPageIndex(prevSectionIndex);
-            // this.stepperIndex = prevSectionIndex;
+            let isSubmitted = await this.submitAndNavigate(currentIndex, true);
 
-            //prev dont need to validate
+            if (isSubmitted) {
+                this.stepperIndex = newIndex;
+                this.setCurrentPageIndex(newIndex);
+                this.setPreviousPageIndex(currentIndex);
+                this.scrollTop(); // Goto top
+            }
+        },
+        async prev() {
+            this.isNavigateByStepClicked = false;
+            let currentIndex = this.stepperIndex;
+
+            let newIndex = this.decreaseStepperIndex(currentIndex);
+
+            await this.submitAndNavigate(currentIndex, false);
+            this.stepperIndex = newIndex;
+            this.setCurrentPageIndex(newIndex);
             this.setPreviousPageIndex(currentIndex);
-            this.setCurrentPageIndex(prevSectionIndex);
-            await this.submitAndNavigate(currentIndex, prevSectionIndex);
+            this.scrollTop(); // Goto top
         },
         scrollTop() {
             this.$vuetify.goTo(0);
@@ -450,82 +438,38 @@ export default {
 
             return currentSection.isValid;
         },
-        async submitAndNavigate(fromSectionIndex, toSectionIndex) {
+        async submitAndNavigate(currentIndex, toValidate) {
             this.loadingAction = "Saving";
-            let currentSection = this.getSectionByIndex(fromSectionIndex);
+            let currentSection = this.getSectionByIndex(currentIndex);
+            let formValid = false;
 
             // validate section for dispay Warning Uncomplete
-            currentSection.validateSection();
-            let boolIsValid = currentSection.isValid;
-            console.log("IsValid: " + boolIsValid);
-            if (boolIsValid) {
-                this.markSectionAsCompleted(fromSectionIndex); // Mark current section as complete
-                if (this.UncompleteArray.includes(fromSectionIndex)) {
-                    const index = this.UncompleteArray.indexOf(fromSectionIndex);
-                    if (index > -1) {
-                        this.UncompleteArray.splice(index, 1);
+            if (toValidate) {
+                currentSection.validateSection();
+                let boolIsValid = currentSection.isValid;
+                if (boolIsValid) {
+                    this.markSectionAsCompleted(currentIndex); // Mark current section as complete
+                    if (this.UncompleteArray.includes(currentIndex)) {
+                        const index = this.UncompleteArray.indexOf(currentIndex);
+                        if (index > -1) {
+                            this.UncompleteArray.splice(index, 1);
+                        }
                     }
+                } else {
+                    if (!this.UncompleteArray.includes(currentIndex)) {
+                        this.UncompleteArray.push(currentIndex);
+                    }
+                    if (this.enableChecking) return;
                 }
-            } else {
-                if (!this.UncompleteArray.includes(fromSectionIndex)) {
-                    this.UncompleteArray.push(fromSectionIndex);
-                }
-                if (this.enableChecking) return false;
+                formValid = boolIsValid;
             }
 
-            // console.log("Uncomplete Array: " + this.UncompleteArray);
+            await currentSection.submit(currentIndex, this.lastStepperIndex);
 
-            // Submit data
 
-            // if (toSectionIndex > this.lastStepperIndex) {
-            //     // validate all section complete before click submit
-            //     let fullCompleteSection = [0, 1, 2, 3, 4];
-            //     let sectionCompleted = this.getSubmittedSections.filter(
-            //         x => !this.UncompleteArray.includes(x)
-            //     );
-            //     console.log("sectionCompleted:" + sectionCompleted);
-            //     console.log(
-            //         "this.arrayCompare(fullCompleteSection, sectionCompleted): " +
-            //             this.arrayCompare(fullCompleteSection, sectionCompleted)
-            //     );
-            //     if (this.arrayCompare(fullCompleteSection, sectionCompleted)) {
-            //         sessionStorage.removeItem("gra_id");
-            //         await currentSection.submit(fromSectionIndex, this.lastStepperIndex);
-            //     } else {
-            //         this.addAppError("Please complete all sections before proceeding.");
-            //         return;
-            //     }
-            // } else {
-            //     await currentSection.submit(fromSectionIndex, toSectionIndex); // Error handling and Notify contained
-            // }
-            // console.log("loading: " + this.$store.getters.getIsLoading);
-            // while (this.$store.getters.getIsLoading) {
-            //     await new Promise(resolve => setTimeout(resolve, 500));
-            // }
-            //console.log("get is success request: " + this.getIsSuccessRequest);
-            // console.log("boolIsValid: " + boolIsValid);
-            await currentSection.submit(fromSectionIndex, this.lastStepperIndex);
-            // await nextSection.populateData(toSectionIndex);
-            // await nextSection.populateData();
-            // console.log('this.stepperIndex ',this.stepperIndex)
-            // console.log('this.boolIsValid ',boolIsValid)
-            // console.log('this.isNavigateByStepClicked ',this.isNavigateByStepClicked)
-            // console.log('this.getIsSuccessRequest ',this.getIsSuccessRequest)
-
-            //for api
-            // if (this.stepperIndex == 4 && boolIsValid) {
-            //     let data = getJsonObject();
-            //     console.log("form is submitted: ", data);
-            //     await this.$store.dispatch("postGraData", data);
-            //     this.dialogTitle = "Success";
-            //     this.dialogMsg = "Form is submitted";
-            //     this.dialog = true;
-            //     return;
-            // }
-            let formValid = boolIsValid;
             if (!this.enableChecking) formValid = true; //bypass Validation
 
-            if (this.stepperIndex == 4 && formValid) {
+            if (this.stepperIndex == 4 && formValid && toValidate) {
                 let data = getJsonObject();
                 console.log("form is submitted: ", data);
                 if (this.enableAPICall)
@@ -536,44 +480,8 @@ Please submit the relevant supporting documents via licensing@gra.gov.sg`;
                 this.dialog = true;
                 return;
             }
-            // if (
-            //     this.stepperIndex == 4 &&
-            //     boolIsValid &&
-            //     !this.isNavigateByStepClicked &&
-            //     this.getIsSuccessRequest
-            // ) {
-            //     //Direct to dash board page after submitted successfully
-            //     // await new Promise((resolve) => setTimeout(resolve, 500));
-            //     // window.location.replace(
-            //     //     window.loginData?.dashboardLink === undefined
-            //     //     ? "/dashboard"
-            //     //     : window.loginData?.dashboardLink === ""
-            //     //     ? "/dashboard"
-            //     //     : window.loginData.dashboardLink
-            //     // );
-            //     this.dialogTitle = "Success";
-            //     this.dialogMsg = "Form is submitted";
-            //     this.dialog = true;
-            //     console.log('form is submitted')
-            //     return;
-            // }
 
-            // Navigate to next section
-            // if (toSectionIndex > this.lastStepperIndex) return; // Don't need to fetch new data if this is the last section
-
-            this.stepperIndex = toSectionIndex;
-            // this.setPreviousPageIndex(fromSectionIndex);
-            // this.setCurrentPageIndex(toSectionIndex);
-            this.scrollTop(); // Goto top
-            return true;
-            // postGraData
-            //  await this.$store.dispatch("postGraData", data);
-            // Get data of next section
-            // await this.$store.dispatch("commitSectionData");
-
-            // let nextSection = this.getSectionByIndex(); // Index have been mutate in Watch hook
-            // // console.log('nextSection ',nextSection)
-            // nextSection.populateData();
+            return true
         },
 
         increaseStepperIndex(current) {

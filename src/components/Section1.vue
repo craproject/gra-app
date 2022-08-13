@@ -631,6 +631,7 @@ export default {
         }
     },
     mounted() {
+        console.log('mounted section 1');
         this.populateData();
     },
     watch: {

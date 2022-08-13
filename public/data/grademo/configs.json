@@ -1,7 +1,7 @@
 {
     "apiBaseUrl":"http://192.168.31.73:152/api/Values/POSTAPI",
     "redirectionEndpoint":"SD7tkC7v38i5i06QlmOeB1NeXC7",
-    "enableChecking":false,
+    "enableChecking":true,
     "isDebugMode":false,
     "enableAPICall":true
 }
