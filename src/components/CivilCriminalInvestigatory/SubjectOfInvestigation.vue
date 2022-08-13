@@ -95,6 +95,7 @@
                         outlined
                         label="Name of Company"
                         v-model="editingItem.name"
+                        :counter="100"
                         :error-messages="nameValidationMessage"
                         @input="v$.editingItem.name.$touch"
                         @blur="v$.editingItem.name.$touch"
@@ -103,8 +104,9 @@
                     <!-- Name of Government Regulatory -->
                     <v-text-field
                         outlined
-                        label="Name of Government Regulatory Organisations"
+                        label="Name of Government Regulatory Organisation"
                         v-model="editingItem.governmentOrganization"
+                        :counter="100"
                         :error-messages="governmentOrganizationValidationMessage"
                         @input="v$.editingItem.governmentOrganization.$touch"
                         @blur="v$.editingItem.governmentOrganization.$touch"
@@ -126,6 +128,7 @@
                     <!-- Details of Investigation -->
                     <v-textarea
                         v-model="editingItem.detailsOfInvestigation"
+                        :counter="300"
                         label="Details of Investigation"
                         :error-messages="detailsOfInvestigationValidationMessage"
                         rows="2"
@@ -141,6 +144,7 @@
                         outlined
                         label="Outcome"
                         v-model="editingItem.outcome"
+                        :counter="100"
                         :error-messages="outcomeValidationMessage"
                         @input="v$.editingItem.outcome.$touch"
                         @blur="v$.editingItem.outcome.$touch"
@@ -191,7 +195,7 @@
                         <template v-slot:activator="{ on, attrs }">
                             <v-text-field
                                 v-model="investigationFromFormatted"
-                                label="Investigation Period From"
+                                label="Approximate Investigation Period From"
                                 outlined
                                 append-icon="mdi-calendar"
                                 readonly
@@ -234,7 +238,7 @@
                         <template v-slot:activator="{ on, attrs }">
                             <v-text-field
                                 v-model="investigationToFormatted"
-                                label="Investigation period To"
+                                label="Approximate Investigation period To"
                                 outlined
                                 append-icon="mdi-calendar"
                                 readonly
@@ -270,6 +274,11 @@
                 </v-card-actions>
             </v-card>
         </v-dialog>
+        <div v-if="showAlert">
+            <p style="color:red;">
+                {{ alertMsg }}
+            </p>
+        </div>
     </div>
 </template>
 
@@ -306,7 +315,7 @@ export default {
                 { value: "name", text: "Name of Company" },
                 {
                     value: "governmentOrganization",
-                    text: "Name of Government Regulatory Organisations"
+                    text: "Name of Government Regulatory Organisation"
                 },
                 //{ value: "country", text: "Country of Court or Agency" },
                 { value: "detailsOfInvestigation", text: "Details of Investigation" },
@@ -322,6 +331,7 @@ export default {
 
             // Other controls
             showSubjectOfInvestigationDialog: false,
+            alertMsg: "",
             //showDateTestimony: false,
             showInvestigationFrom: false,
             showInvestigationTo: false
@@ -344,7 +354,7 @@ export default {
                 //country: { required: helpers.withMessage("This field is mandatory", required) },
                 detailsOfInvestigation: {
                     required: helpers.withMessage("This field is mandatory", required),
-                    max: maxLength(100)
+                    max: maxLength(300)
                 },
                 outcome: {
                     required: helpers.withMessage("This field is mandatory", required),
@@ -387,6 +397,10 @@ export default {
                 this.wasSubjectOfInvestigation === "No" ||
                 (this.wasSubjectOfInvestigation === "Yes" && this.table.length > 0)
             );
+        },
+
+        showAlert(){
+            return(this.wasSubjectOfInvestigation === "Yes" && this.table.length === 0)
         },
 
         // Validation messages
@@ -463,10 +477,22 @@ export default {
     watch: {
         table: {
             handler() {
-                // this.$store.commit("setSection3B", {
-                //     tableName: this.getSection3B.tableName,
-                //     table: this.table
-                // });
+                if (this.table) {
+                    console.log("length ne: " + this.table.length);
+                    if (this.table?.length > 0) {
+                        // this.showAlert = false;
+                        this.alertMsg = "";
+                    } else {
+                        // this.showAlert = this.wasSubjectOfInvestigation === "Yes" ? true : false;
+                        this.alertMsg = "At least one record must be filled in";
+                    }
+
+                } else {
+                    // this.showAlert = this.wasSubjectOfInvestigation === "Yes" ? true : false;
+
+                    this.alertMsg = "At least one record must be filled in";
+                }
+
             },
             deep: true
         }

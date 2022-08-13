@@ -51,7 +51,7 @@ export class CcipArrestedModel {
                     Sec_3A_Nature_of_Charge: item.natureOfCharge,
                     Sec_3A_Name_of_Law_Enforcement_Agency: item.name,
                     
-                    Sec_3A_Address: item.Address,
+                    Sec_3A_Address: item.address,
                     //Sec_3A_Country: item.country,
                     Sec_3A_Disposition: item.disposition,
                     Sec_3A_Sentence: item.sentence,

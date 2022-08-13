@@ -193,7 +193,7 @@
                         item-text="label"
                         v-model="editingItem.citizenshipType"
                         :error-messages="citizenshipTypeValidationMessage"
-                        @change="v$.editingItem.citizenshipType.$touch;"
+                        @change="clearIdentificationFields"
                         @blur="v$.editingItem.citizenshipType.$touch"
                     ></v-select>
 
@@ -207,6 +207,7 @@
                         "
                         label="Identification Number"
                         v-model="editingItem.nric"
+                         :counter="100"
                         :error-messages="nricValidationMessage"
                         @input="v$.editingItem.nric.$touch"
                         @blur="v$.editingItem.nric.$touch"
@@ -218,6 +219,8 @@
                         v-if="editingItem.citizenshipType === '100000003'"
                         label="Country Identification Number"
                         v-model="editingItem.countryIdNumber"
+                        :counter="100"
+                        :error-messages="countryIdNumberValidationMessage"
                     />
 
                     <!-- Country -->
@@ -534,6 +537,15 @@ export default {
                     //     )
                     // )
                 },
+                countryIdNumber: {
+                    required: helpers.withMessage(
+                        "This field is mandatory",
+                        requiredIf(function() {
+                            return this.editingItem.citizenshipType == "100000003"; // return true if this field is required
+                        })
+                    )
+                    //    required: helpers.withMessage("This field is mandatory", required)
+                },
                 country: { required: helpers.withMessage("This field is mandatory", required) },
                 nationality: { required: helpers.withMessage("This field is mandatory", required) },
                 mainContactNumber: {
@@ -572,7 +584,8 @@ export default {
     computed: {
         ...mapGetters(["getSection4A"]),
         isValid() {
-            return this.table.length > 0 && this.table.length < 6;
+            return true;
+            // return this.table.length > 0 && this.table.length < 6;
         },
         dateOfBirthFormatted() {
             return (
@@ -609,6 +622,9 @@ export default {
         },
         nricValidationMessage() {
             return this.v$.editingItem.nric.$errors.find(e => e)?.$message ?? "";
+        },
+        countryIdNumberValidationMessage() {
+            return this.v$.editingItem.countryIdNumber.$errors.find(e => e)?.$message ?? "";
         },
         //countryIdNumberValidationMessage() {
         //    return this.v$.editingItem.countryIdNumber.$errors.find(e => e)?.$message ?? "";
@@ -650,6 +666,10 @@ export default {
         }
     },
     methods: {
+        clearIdentificationFields() {
+            this.editingItem.nric = "";
+            this.editingItem.countryIdNumber = "";
+        },
         // CRUD actions
         addItem() {
             this.editingItem = new ParticularExecutiveModel();

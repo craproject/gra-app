@@ -40,6 +40,9 @@ export class ParticularExecutiveModel {
                         residentialAddress: item.Sec_4_Residential_Address,
                         email: item.Sec_4_Email_Address,
                         positionHeld: item.Sec_4_Position_Held,
+
+                        dateOfAppointment: item.Sec_4_Date_of_Appointment,
+
                         roles: item.Sec_4_Roles,
                         anyArrestMade: item.Sec_4_Any_Arrest_Made,
                         anyCriminalCharges: item.Sec_4_Any_Criminal_Charges,
@@ -73,6 +76,9 @@ export class ParticularExecutiveModel {
                     
                     email: item.email,
                     positionHeld: item.positionHeld,
+
+                    dateOfAppointment: item.dateOfAppointment,
+
                     roles: item.roles,
                     anyArrestMade: item.anyArrestMade,
                     anyCriminalCharges: item.anyCriminalCharges,

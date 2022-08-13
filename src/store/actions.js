@@ -51,7 +51,8 @@ export default {
             // Parse result
             let responseData = response.data.Data[0];
 
-            console.log(JSON.stringify(responseData, null, 4));
+            console.log('postGraData API Success: ' +JSON.stringify(responseData, null, 4));
+            return true
             // console.log("commit to store post for section: "+parseInt(context.getters.getCurrentPageIndex));
             // parseSectionDataAndCommitToStore(
             //     // parseInt(context.getters.getCurrentPageIndex) + 1,

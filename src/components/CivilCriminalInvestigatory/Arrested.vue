@@ -15,7 +15,7 @@
                     (1) the entity, its directors, trustees, or officers did not commit the offence
                     charged; <br />
                     (2) the charges were dismissed; <br />
-                    (3) the entity,its directors, trustees, or officers were not convicted; or
+                    (3) the entity, its directors, trustees, or officers were not convicted; or
                     <br />
                     (4) the charges or offences happened a long time ago.
                 </span>
@@ -105,6 +105,7 @@
                         outlined
                         label="Name of Case and Docket or Tracking Number"
                         v-model="editingItem.nameOfCase"
+                        :counter="100"
                         :error-messages="nameOfCaseValidationMessage"
                         @input="v$.editingItem.nameOfCase.$touch"
                         @blur="v$.editingItem.nameOfCase.$touch"
@@ -155,6 +156,7 @@
                     <!-- Nature of Charge or Offence -->
                     <v-textarea
                         v-model="editingItem.natureOfCharge"
+                        :counter="300"
                         label="Nature of Charge or Offence"
                         :error-messages="natureOfChargeValidationMessage"
                         rows="2"
@@ -223,6 +225,7 @@
                         outlined
                         label="Name of Law Enforcement Agency or Court involved"
                         v-model="editingItem.name"
+                        :counter="100"
                         :error-messages="nameValidationMessage"
                         @input="v$.editingItem.name.$touch"
                         @blur="v$.editingItem.name.$touch"
@@ -233,6 +236,7 @@
                         outlined
                         label="Address of Law Enforcement Agency or Court involved"
                         v-model="editingItem.address"
+                        :counter="100"
                         :error-messages="addressValidationMessage"
                         @input="v$.editingItem.address.$touch"
                         @blur="v$.editingItem.address.$touch"
@@ -243,6 +247,7 @@
                         outlined
                         label="Disposition (Acquitted, Convicted, Dismissed, etc)"
                         v-model="editingItem.disposition"
+                        :counter="100"
                         :error-messages="dispositionValidationMessage"
                         @input="v$.editingItem.disposition.$touch"
                         @blur="v$.editingItem.disposition.$touch"
@@ -296,6 +301,7 @@
                         outlined
                         label="Sentence"
                         v-model="editingItem.sentence"
+                        :counter="100"
                         :error-messages="sentenceValidationMessage"
                         @input="v$.editingItem.sentence.$touch"
                         @blur="v$.editingItem.sentence.$touch"
@@ -513,7 +519,7 @@ export default {
                         this.alertMsg = "";
                     } else {
                         // this.showAlert = this.haveEverBeenArrested === "Yes" ? true : false;
-                        this.alertMsg = "At least 1 record must be fill in";
+                        this.alertMsg = "At least one record must be filled in";
                     }
 
                     //console.log("setSection2A Table 1: " + this.table),
@@ -525,7 +531,7 @@ export default {
                 } else {
                     // this.showAlert = this.haveEverBeenArrested === "Yes" ? true : false;
 
-                    this.alertMsg = "At least 1 record must be fill in";
+                    this.alertMsg = "At least one record must be filled in";
                 }
 
                 // this.$store.commit("setSection3A", {
