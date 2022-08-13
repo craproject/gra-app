@@ -1,0 +1,69 @@
+@import "~vuetify/src/styles/styles.sass";
+
+$body-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+.v-application {
+    font-family: $body-font-family, sans-serif !important;
+
+    // Override label color. See link: https://github.com/vuetifyjs/vuetify/issues/11999
+    // .theme--light.v-label {
+    //     color: map-deep-get($material-light, "text", "primary");
+    // }
+}
+
+label.v-label.v-label--is-disabled.theme--light{
+    color: map-deep-get($material-light, "text", "secondary");
+}
+
+label.v-label.theme--light{
+    color: map-deep-get($material-light, "text", "primary");
+}
+
+// Override text transform
+.v-btn {
+    text-transform: none !important;
+}
+
+// Set border for tables
+$table-border: thin solid rgba(0, 0, 0, 0.12);
+
+.c-table-header {
+    th {
+        background-color: #fafafa;
+    }
+}
+
+.c-table-bordered {
+    table {
+        border: $table-border;
+
+        th {
+            border-left: $table-border;
+        }
+
+        th:last-child {
+            border-left: $table-border;
+            border-right: $table-border;
+        }
+
+        td {
+            border-left: $table-border;
+        }
+
+        td:last-child {
+            border-left: $table-border;
+            border-right: $table-border;
+        }
+    }
+}
+
+table {
+    th {
+        background-color: #fafafa;
+    }
+}
+
+.c-border-top {
+    border-top: 1px solid #dee2e6;
+}

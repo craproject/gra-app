@@ -1,0 +1,178 @@
+[
+  {
+    "Id": "511acc26-4fca-eb11-9676-005056b57f58",
+    "CurrencyName": "Australian Dollar",
+    "CurrencyCode": "AUD",
+    "CurrencySymbol": "$",
+    "Value": 1.01460000,
+    "Precision": "8"
+  },
+  {
+    "Id": "b7476636-51ca-eb11-9676-005056b57f58",
+    "CurrencyName": "Canadian Dollar",
+    "CurrencyCode": "CAD",
+    "CurrencySymbol": "$",
+    "Value": 1.08850000,
+    "Precision": "8"
+  },
+  {
+    "Id": "ffa1efe5-dfcf-eb11-9678-005056b57f58",
+    "CurrencyName": "Chinese Yuan 人民币",
+    "CurrencyCode": "CNY",
+    "CurrencySymbol": "¥",
+    "Value": 0.21030000,
+    "Precision": "8"
+  },
+  {
+    "Id": "9d42069a-fcbc-eb11-9676-005056b57f58",
+    "CurrencyName": "euro",
+    "CurrencyCode": "EUR",
+    "CurrencySymbol": "€",
+    "Value": 1.56969999,
+    "Precision": "8"
+  },
+  {
+    "Id": "6a63b443-e1cf-eb11-9678-005056b57f58",
+    "CurrencyName": "franco svizzero",
+    "CurrencyCode": "CHF",
+    "CurrencySymbol": "CHF",
+    "Value": 1.47459999,
+    "Precision": "8"
+  },
+  {
+    "Id": "58092b27-e0cf-eb11-9678-005056b57f58",
+    "CurrencyName": "Hong Kong Dollar",
+    "CurrencyCode": "HKD",
+    "CurrencySymbol": "$",
+    "Value": 0.17290000,
+    "Precision": "8"
+  },
+  {
+    "Id": "dd8b5b7e-e0cf-eb11-9678-005056b57f58",
+    "CurrencyName": "Japanese Yen 円",
+    "CurrencyCode": "JPY",
+    "CurrencySymbol": "¥",
+    "Value": 0.01183300,
+    "Precision": "8"
+  },
+  {
+    "Id": "22296deb-e0cf-eb11-9678-005056b57f58",
+    "CurrencyName": "New Zealand Dollar",
+    "CurrencyCode": "NZD",
+    "CurrencySymbol": "$",
+    "Value": 0.96620000,
+    "Precision": "8"
+  },
+  {
+    "Id": "769aba00-e1cf-eb11-9678-005056b57f58",
+    "CurrencyName": "Philippine Peso",
+    "CurrencyCode": "PHP",
+    "CurrencySymbol": "₱",
+    "Value": 0.02658700,
+    "Precision": "8"
+  },
+  {
+    "Id": "91ed76b2-dfcf-eb11-9678-005056b57f58",
+    "CurrencyName": "Pound Sterling",
+    "CurrencyCode": "GBP",
+    "CurrencySymbol": "£",
+    "Value": 1.85450001,
+    "Precision": "8"
+  },
+  {
+    "Id": "0d3c2b19-e1cf-eb11-9678-005056b57f58",
+    "CurrencyName": "Qatari Rial ريال قطري",
+    "CurrencyCode": "QAR",
+    "CurrencySymbol": "ر.ق.‏",
+    "Value": 0.36920000,
+    "Precision": "8"
+  },
+  {
+    "Id": "e088a7c4-e0cf-eb11-9678-005056b57f58",
+    "CurrencyName": "Ringgit Malaysia",
+    "CurrencyCode": "MYR",
+    "CurrencySymbol": "RM",
+    "Value": 0.32440000,
+    "Precision": "8"
+  },
+  {
+    "Id": "44d43545-e0cf-eb11-9678-005056b57f58",
+    "CurrencyName": "Rupee",
+    "CurrencyCode": "INR",
+    "CurrencySymbol": "₹",
+    "Value": 0.01797100,
+    "Precision": "8"
+  },
+  {
+    "Id": "c44fae6b-e0cf-eb11-9678-005056b57f58",
+    "CurrencyName": "Rupiah Indonesia",
+    "CurrencyCode": "IDR",
+    "CurrencySymbol": "Rp",
+    "Value": 0.00009489,
+    "Precision": "8"
+  },
+  {
+    "Id": "fa9d2b2e-e1cf-eb11-9678-005056b57f58",
+    "CurrencyName": "Saudi Arabian Riyals ريال سعودي",
+    "CurrencyCode": "SAR",
+    "CurrencySymbol": "ر.س.‏",
+    "Value": 0.35840000,
+    "Precision": "8"
+  },
+  {
+    "Id": "91f9b571-bbae-eb11-966c-005056b57f58",
+    "CurrencyName": "Singapore Dollar",
+    "CurrencyCode": "SGD",
+    "CurrencySymbol": "$",
+    "Value": 1.0,
+    "Precision": "8"
+  },
+  {
+    "Id": "643db39c-e0cf-eb11-9678-005056b57f58",
+    "CurrencyName": "South Korean Won 원",
+    "CurrencyCode": "KRW",
+    "CurrencySymbol": "₩",
+    "Value": 0.00115000,
+    "Precision": "8"
+  },
+  {
+    "Id": "1bda5cd4-e0cf-eb11-9678-005056b57f58",
+    "CurrencyName": "Taiwan Dollar 新台幣",
+    "CurrencyCode": "TWD",
+    "CurrencySymbol": "NT$",
+    "Value": 0.04833400,
+    "Precision": "8"
+  },
+  {
+    "Id": "abed534e-e1cf-eb11-9678-005056b57f58",
+    "CurrencyName": "Thai Baht บาท",
+    "CurrencyCode": "THB",
+    "CurrencySymbol": "฿",
+    "Value": 0.04051100,
+    "Precision": "8"
+  },
+  {
+    "Id": "c0c7e0a8-e1cf-eb11-9678-005056b57f58",
+    "CurrencyName": "United Arab Emirates Dirhams  درهم اماراتي",
+    "CurrencyCode": "AED",
+    "CurrencySymbol": "د.إ.‏",
+    "Value": 0.36600000,
+    "Precision": "8"
+  },
+  {
+    "Id": "1f5ca3ee-91c7-eb11-9676-005056b57f58",
+    "CurrencyName": "US Dollar",
+    "CurrencyCode": "USD",
+    "CurrencySymbol": "$",
+    "Value": 1.34440000,
+    "Precision": "8"
+  },
+  {
+    "Id": "7b1384ba-b4c8-eb11-9676-005056b57f58",
+    "CurrencyName": "Vietnamese Đồng",
+    "CurrencyCode": "VND",
+    "CurrencySymbol": "₫",
+    "Value": 0.00005909,
+    "Precision": "8"
+  }
+]

@@ -1,0 +1,4 @@
+{
+    "/api/GRAApplication/Get": "/Get",
+    "/api/GRAApplication/Submit": "/Submit"
+}

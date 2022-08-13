@@ -1,0 +1,895 @@
+{
+    "Get": {
+        "IsSuccessful": true,
+        "Errors": null,
+        "Data": [{
+            "CRM_ID": "6bd1198e-366d-eb11-a812-000d3ac84d40",
+            "Form_Type": "100000000",
+            "Type": "100000000",
+            "Category": "100000000",
+            "Submission_ID": null,
+            "Submitted_Date": "2021-02-27",
+            "General_Info_Checkbox_1": true,
+            "General_Info_Checkbox_2": true,
+            "General_Info_Checkbox_3": true,
+            "General_Info_PRAF_Checkbox_1": true,
+            "General_Info_PRAF_Checkbox_2": true,
+            "End_Q1": null,
+            "End_Q2": null,
+            "End_Q3": null,
+            "Sec_1A_Checkbox": true,
+            "Sec_1A_Name": "Applicant Name",
+            "Sec_1A_Gender": "100000001",
+            "Sec_1B_CitizenshipType": "100000000",
+            "Sec_1B_NRIC_FIN": "S1234567D",
+            "Sec_1B_Checkbox": true,
+            "Sec_1B_Yes_Table": [{
+                    "CRM_ID": "38c4ae9c-24db-4a81-981f-9c9d375abdfc",
+                    "Sec_1B_ForeignCitizenship": "100000000",
+                    "Sec_1B_Country": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                    "Sec_1B_Foreign_Country_Identification_Number": "AUS",
+                    "Sec_1B_Passport_Number": "A1234567",
+                    "RowNo": 1
+                },
+                {
+                    "CRM_ID": "69379f0e-2bf1-4b85-9ce5-b5283d1f1ac7",
+                    "Sec_1B_ForeignCitizenship": "100000000",
+                    "Sec_1B_Country": "7ea9046d-f0c5-474b-9f39-d78382c45c9e",
+                    "Sec_1B_Foreign_Country_Identification_Number": "MYS",
+                    "Sec_1B_Passport_Number": "M1234567",
+                    "RowNo": 2
+                }
+            ],
+            "Sec_1B_P_Checkbox": true,
+            "Sec_1B_P_Yes_Table": [{
+                "CRM_ID": "6bd1198e-366d-eb11-a812-000d3ac84d40",
+                "Sec_1B_P_Passport_Number": "K1234567E",
+                "Sec_1B_P_Name_on_Passport": "Applicant Name",
+                "Sec_1B_P_Country_of_Issue": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                "Sec_1B_P_Place_of_Issue": "Place of Issued",
+                "Sec_1B_P_Date_of_Issue": "2020-12-31",
+                "Sec_1B_P_Expiry_Date": "2025-12-31",
+                "RowNo": 1
+            }],
+            "Sec_1C_Date_of_Birth": "1990-12-31",
+            "Sec_1C_Country_Of_Birth": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+            "Sec_1D_Address_Type": "100000000",
+            "Sec_1D_Blk": "123",
+            "Sec_1D_Street": "Street1",
+            "Sec_1D_Floor": "1",
+            "Sec_1D_Unit": "22",
+            "Sec_1D_Building": "33",
+            "Sec_1D_Postal_Code": "123456",
+            "Sec_1D_Country": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+            "Sec_1E_Checkbox": true,
+            "Sec_1E_Address_Type": "100000000",
+            "Sec_1E_Blk": "123",
+            "Sec_1E_Street": "Street1",
+            "Sec_1E_Floor": "1",
+            "Sec_1E_Unit": "22",
+            "Sec_1E_Building": "33",
+            "Sec_1E_Postal_Code": "123456",
+            "Sec_1E_Country": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+            "Sec_1F_Home_Number_Country_Code": "65",
+            "Sec_1F_Home_Number_Area_Code": "65",
+            "Sec_1F_Home_Number_Number": "12345678",
+            "Sec_1F_Mobile_Number_Country_Code": "65",
+            "Sec_1F_Mobile_Number_Area_Code": "65",
+            "Sec_1F_Mobile_Number_Number": "12345678",
+            "Sec_1F_Office_Number_Country_Code": "65",
+            "Sec_1F_Office_Number_Area_Code": "65",
+            "Sec_1F_Office_Number_Number": "12345678",
+            "Sec_1F_Office_Number_Extension": "2",
+            "Sec_1F_Personal_Email": "personalemail@gmail.com.sg",
+            "Sec_1F_Work_Email": "workemail@company.com.sg",
+            "Sec_1F_Checkbox": true,
+            "Sec_1G_Race": "73726bc2-5640-485d-8989-e3c7bc709c36",
+            "Sec_1H_Checkbox": true,
+            "Sec_1H_Yes_Table": [{
+                    "CRM_ID": "6bd1198e-366d-eb11-a812-000d3ac84d40",
+                    "Sec_1H_Other_Name": "NickName1",
+                    "Sec_1H_From": "1990-12-31",
+                    "Sec_1H_To": "2001-12-31",
+                    "RowNo": 1
+                },
+                {
+                    "CRM_ID": "69379f0e-2bf1-4b85-9ce5-b5283d1f1ac7",
+                    "Sec_1H_Other_Name": "NickName2",
+                    "Sec_1H_From": "2002-12-31",
+                    "Sec_1H_To": "2020-12-31",
+                    "RowNo": 2
+                }
+            ],
+            "Sec_1I_Checkbox": true,
+            "Sec_1I_Yes_Table": [{
+                    "CRM_ID": "6bd1198e-366d-eb11-a812-000d3ac84d40",
+                    "Sec_1I_Scar": "100000000",
+                    "Sec_1I_Tattoo": "162946b6-7933-4cf1-b283-37e37984273f",
+                    "Sec_1I_Location": "f6686463-018d-4b2f-8147-d83517d34d1c",
+                    "RowNo": 1
+                },
+                {
+                    "CRM_ID": "69379f0e-2bf1-4b85-9ce5-b5283d1f1ac7",
+                    "Sec_1I_Scar": "100000002",
+                    "Sec_1I_Tattoo": "162946b6-7933-4cf1-b283-37e37984273f",
+                    "Sec_1I_Location": "f6686463-018d-4b2f-8147-d83517d34d1c",
+                    "RowNo": 2
+                }
+            ],
+            "Sec_2A_Checkbox": true,
+            "Sec_2A_Yes_Table": [{
+                    "CRM_ID": "16147816-511d-44f1-9e7a-b3506852243a",
+                    "Sec_2A_Address_Type": "100000000",
+                    "Sec_2A_Blk": "123",
+                    "Sec_2A_Street": "Street1",
+                    "Sec_2A_Floor": "1",
+                    "Sec_2A_Unit": "22",
+                    "Sec_2A_Building": "33",
+                    "Sec_2A_Postal_Code": "123456",
+                    "Sec_2A_State": "Singapore",
+                    "Sec_2A_Country": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                    "Sec_2A_Date_From": "1990-12-31",
+                    "Sec_2A_Date_To": "2010-12-31",
+                    "Sec_2A_Ownership": "100000002",
+                    "Sec_2A_Other": "",
+                    "Sec_2A_Currently_Staying": false,
+                    "RowNo": 1
+                },
+                {
+                    "CRM_ID": "69379f0e-2bf1-4b85-9ce5-b5283d1f1ac7",
+                    "Sec_2A_Address_Type": "Apt Blk",
+                    "Sec_2A_Blk": "24",
+                    "Sec_2A_Street": "Tanglin Halt",
+                    "Sec_2A_Floor": "2",
+                    "Sec_2A_Unit": "14",
+                    "Sec_2A_Building": "24",
+                    "Sec_2A_Postal_Code": "140024",
+                    "Sec_2A_State": "Singapore",
+                    "Sec_2A_Country": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                    "Sec_2A_Date_From": "2011-01-31",
+                    "Sec_2A_Date_To": "2021-01-31",
+                    "Sec_2A_Ownership": "100000001",
+                    "Sec_2A_Other": "",
+                    "Sec_2A_Currently_Staying": true,
+                    "RowNo": 2
+                }
+            ],
+            "Sec_3A_Marital": "100000002",
+            "Sec_3A_Checkbox": true,
+            "Sec_3A_Yes_Table": [{
+                "CRM_ID": "16147816-511d-44f1-9e7a-b3506852243a",
+                "Sec_3A_Date_of_Marriage": "2017-12-31",
+                "Sec_3A_Country_of_Marriage": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                "Sec_3A_Spouse_Name": "Name",
+                "Sec_3A_Spouse_NRIC_FIN": "S1234567D",
+                "Sec_3A_Spouse_Country_Identification_Number": "SGP",
+                "Sec_3A_Spouse_Citizenship": "21e51f5a-5d6f-48cf-b6ad-3cfe0fa4bef6",
+                "Sec_3A_Spouse_Date_of_Birth": "1990-12-31",
+                "Sec_3A_Spouse_Country_of_Birth": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                "Sec_3A_Occupation": "Occupation",
+                "Sec_3A_Address_Type": "100000000",
+                "Sec_3A_Blk": "1",
+                "Sec_3A_Street": "Street1",
+                "Sec_3A_Floor": "1",
+                "Sec_3A_Unit": "11",
+                "Sec_3A_Building": "111",
+                "Sec_3A_Postal_Code": "140011",
+                "Sec_3A_Country": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                "RowNo": 1
+            }],
+            "Sec_6A_Checkbox": true,
+            "Sec_6A_Yes_Table": [{
+                    "CRM_ID": "16147816-511d-44f1-9e7a-b3506852243a",
+                    "Sec_6A_From": "2020-01-31",
+                    "Sec_6A_To": "31/12/2020",
+                    "Sec_6A_To_Present": false,
+                    "Sec_6A_Name": "Name of Employer1",
+                    "Sec_6A_Country": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                    "Sec_6A_Title": "Title/Position Held1",
+                    "Sec_6A_Duties": "Description of Duties1",
+                    "Sec_6A_Yes_Table_Checkbox_IsGamblingRelated": true,
+                    "Sec_6A_Yes_Table_Checkbox_IsIMARelated": false,
+                    "RowNo": 1
+                },
+                {
+                    "CRM_ID": "2eaf32ea-48ab-44a4-a543-3186685379cb",
+                    "Sec_6A_From": "2020-01-31",
+                    "Sec_6A_To": "31/12/2020",
+                    "Sec_6A_To_Present": false,
+                    "Sec_6A_Name": "Name of Employer2",
+                    "Sec_6A_Country": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                    "Sec_6A_Title": "Title/Position Held2",
+                    "Sec_6A_Duties": "Description of Duties2",
+                    "Sec_6A_Yes_Table_Checkbox_IsGamblingRelated": false,
+                    "Sec_6A_Yes_Table_Checkbox_IsIMARelated": true,
+                    "RowNo": 2
+                }
+            ],
+            "Sec_6B_i_Checkbox": true,
+            "Sec_6B_i_Yes_Table": [{
+                    "CRM_ID": "16147816-511d-44f1-9e7a-b3506852243a",
+                    "Sec_6B_i_Date": "2020-01-31",
+                    "Sec_6B_i_Name": "Name of Employer1",
+                    "Sec_6B_i_Country": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                    "Sec_6B_i_Reason": "Reason for Disciplinary Action",
+                    "RowNo": 1
+                },
+                {
+                    "CRM_ID": "2eaf32ea-48ab-44a4-a543-3186685379cb",
+                    "Sec_6B_i_Date": "2020-01-31",
+                    "Sec_6B_i_Name": "Name of Employer2",
+                    "Sec_6B_i_Country": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                    "Sec_6B_i_Reason": "Reason for Disciplinary Action",
+                    "RowNo": 2
+                }
+            ],
+            "Sec_6B_ii_Checkbox": true,
+            "Sec_6B_ii_Yes_Table": [{
+                    "CRM_ID": "16147816-511d-44f1-9e7a-b3506852243a",
+                    "Sec_6B_ii_Date": "2020-01-31",
+                    "Sec_6B_ii_Name": "Name of Employer1",
+                    "Sec_6B_ii_Country": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                    "Sec_6B_ii_Reason": "Reason for Disciplinary Action",
+                    "RowNo": 1
+                },
+                {
+                    "CRM_ID": "2eaf32ea-48ab-44a4-a543-3186685379cb",
+                    "Sec_6B_ii_Date": "0202-01-31",
+                    "Sec_6B_ii_Name": "Name of Employer2",
+                    "Sec_6B_ii_Country": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                    "Sec_6B_ii_Reason": "Reason Disciplinary Action",
+                    "RowNo": 2
+                }
+            ],
+            "Sec_6E_Checkbox": true,
+            "Sec_6E_Yes_Table": [{
+                    "CRM_ID": "16147816-511d-44f1-9e7a-b3506852243a",
+                    "Sec_6E_Type": "Type of Licence1",
+                    "Sec_6E_Name": "Name of Approving Organisation",
+                    "Sec_6E_Country": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                    "Sec_6E_Date": "2020-12-31",
+                    "Sec_6E_Reason": "Reason for Denial",
+                    "RowNo": 1
+                },
+                {
+                    "CRM_ID": "2eaf32ea-48ab-44a4-a543-3186685379cb",
+                    "Sec_6E_Type": "Type of Licence 2",
+                    "Sec_6E_Name": "Name of Approving Organisation",
+                    "Sec_6E_Country": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                    "Sec_6E_Date": "2020-12-31",
+                    "Sec_6E_Reason": "Reason for Denial",
+                    "RowNo": 2
+                }
+            ],
+            "Sec_6J_i_Checkbox": true,
+            "Sec_6J_i_Yes_Table": [{
+                    "CRM_ID": "16147816-511d-44f1-9e7a-b3506852243a",
+                    "Sec_6J_i_Name_of_Person": "Name of Person",
+                    "Sec_6J_i_Relationship": "Relationship",
+                    "Sec_6J_i_Name_of_Business": "Name of Gambling Business",
+                    "Sec_6J_i_Country": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                    "Sec_6J_i_Title": "Title / Position Held",
+                    "Sec_6J_i_Yes_Table_Checkbox_IsIMARelated": true,
+                    "RowNo": 1
+                },
+                {
+                    "CRM_ID": "2eaf32ea-48ab-44a4-a543-3186685379cb",
+                    "Sec_6J_i_Name_of_Person": "Name of Person2",
+                    "Sec_6J_i_Relationship": "Relationship",
+                    "Sec_6J_i_Name_of_Business": "Name of Gambling Business",
+                    "Sec_6J_i_Country": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                    "Sec_6J_i_Title": "Title / Position Held",
+                    "Sec_6J_i_Yes_Table_Checkbox_IsIMARelated": true,
+                    "RowNo": 2
+                }
+            ],
+            "Sec_7A_Checkbox": true,
+            "Sec_7A_Yes_Table": [{
+                    "CRM_ID": "16147816-511d-44f1-9e7a-b3506852243a",
+                    "Sec_7A_Nature_of_Charge": "Nature of Charge or Offence1",
+                    "Sec_7A_Location": "Location of incident",
+                    "Sec_7A_Date_of_Arrest": "2020-12-31",
+                    "Sec_7A_Date_of_Charge": "2020-12-31",
+                    "Sec_7A_Name": "Name of Law Enforcement Agency or Court involved",
+                    "Sec_7A_Country": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                    "Sec_7A_Outcome": "100000000",
+                    "Sec_7A_Outcome_Others": "",
+                    "Sec_7A_Sentence": "",
+                    "RowNo": 1
+                },
+                {
+                    "CRM_ID": "2eaf32ea-48ab-44a4-a543-3186685379cb",
+                    "Sec_7A_Nature_of_Charge": "Nature of Charge or Offence2",
+                    "Sec_7A_Location": "Location of incident2",
+                    "Sec_7A_Date_of_Arrest": "2020-12-31",
+                    "Sec_7A_Date_of_Charge": "2020-12-31",
+                    "Sec_7A_Name": "Name of Law Enforcement Agency or Court involved",
+                    "Sec_7A_Country": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                    "Sec_7A_Outcome": "100000011",
+                    "Sec_7A_Outcome_Others": "If Others Outcome",
+                    "Sec_7A_Sentence": "",
+                    "RowNo": 2
+                }
+            ],
+            "Sec_7C_Checkbox": true,
+            "Sec_7C_Yes_Table": [{
+                    "CRM_ID": "16147816-511d-44f1-9e7a-b3506852243a",
+                    "Sec_7C_Name": "Name of Court or Agency1",
+                    "Sec_7C_Country": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                    "Sec_7C_Nature_of_Proceeding": "Nature of Proceeding or Investigation",
+                    "Sec_7C_Was_Testimony_Given": true,
+                    "Sec_7C_Date_Testimony": "2020-12-31",
+                    "Sec_7C_Case_Concluded": true,
+                    "Sec_7C_Investigation_From": "2020-12-31",
+                    "Sec_7C_Investigation_To": "2020-12-31",
+                    "RowNo": 1
+                },
+                {
+                    "CRM_ID": "2eaf32ea-48ab-44a4-a543-3186685379cb",
+                    "Sec_7C_Name": "Name of Court or Agency2",
+                    "Sec_7C_Country": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                    "Sec_7C_Nature_of_Proceeding": "Nature of Proceeding or Investigation2",
+                    "Sec_7C_Was_Testimony_Given": true,
+                    "Sec_7C_Date_Testimony": "2020-12-31",
+                    "Sec_7C_Case_Concluded": true,
+                    "Sec_7C_Investigation_From": "2020-12-31",
+                    "Sec_7C_Investigation_To": "2020-12-31",
+                    "RowNo": 2
+                }
+            ],
+            "Sec_7D_i_Checkbox": true,
+            "Sec_7D_i_Yes_Table": [{
+                    "CRM_ID": "16147816-511d-44f1-9e7a-b3506852243a",
+                    "Sec_7D_i_Name": "Name of Court or Agency1",
+                    "Sec_7D_i_Country": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                    "Sec_7D_i_Nature_of_Proceeding": "Nature of Proceeding or Investigation",
+                    "Sec_7D_i_Was_Testimony_Given": true,
+                    "Sec_7D_i_Date_Testimony": "2020-12-31",
+                    "Sec_7D_i_Case_Concluded": true,
+                    "Sec_7D_i_Investigation_From": "2020-12-31",
+                    "Sec_7D_i_Investigation_To": "2020-12-31",
+                    "RowNo": 1
+                },
+                {
+                    "CRM_ID": "2eaf32ea-48ab-44a4-a543-3186685379cb",
+                    "Sec_7D_i_Name": "Name of Court or Agency2",
+                    "Sec_7D_i_Country": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                    "Sec_7D_i_Nature_of_Proceeding": "Nature of Proceeding or Investigation",
+                    "Sec_7D_i_Was_Testimony_Given": true,
+                    "Sec_7D_i_Date_Testimony": "2020-12-31",
+                    "Sec_7D_i_Case_Concluded": true,
+                    "Sec_7D_i_Investigation_From": "2020-12-31",
+                    "Sec_7D_i_Investigation_To": "2020-12-31",
+                    "RowNo": 2
+                }
+            ],
+            "Sec_7D_ii_Checkbox": true,
+            "Sec_7D_ii_Yes_Table": [{
+                "CRM_ID": "16147816-511d-44f1-9e7a-b3506852243a",
+                "Sec_7D_ii_Name": "Name of Court or Agency1",
+                "Sec_7D_ii_Country": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                "Sec_7D_ii_Nature_of_Proceeding": "Nature of Proceeding or Investigation1",
+                "Sec_7D_ii_Was_Testimony_Given": true,
+                "Sec_7D_ii_Date_Testimony": "2020-12-31",
+                "Sec_7D_ii_Case_Concluded": true,
+                "Sec_7D_ii_Investigation_From": "2020-12-31",
+                "Sec_7D_ii_Investigation_To": "2020-12-31",
+                "RowNo": 1
+            }],
+            "Sec_7E_Checkbox": true,
+            "Sec_7E_Yes_Table": [{
+                    "CRM_ID": "16147816-511d-44f1-9e7a-b3506852243a",
+                    "Sec_7E_Date": "2020-12-21",
+                    "Sec_7E_Type": "Type of Action Taken1",
+                    "Sec_7E_Name": "Name of Government / Organisation",
+                    "Sec_7E_Country": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                    "RowNo": 1
+                },
+                {
+                    "CRM_ID": "2eaf32ea-48ab-44a4-a543-3186685379cb",
+                    "Sec_7E_Date": "2020-12-31",
+                    "Sec_7E_Type": "Type of Action Taken2",
+                    "Sec_7E_Name": "Name of Government / Organisation",
+                    "Sec_7E_Country": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                    "RowNo": 2
+                }
+            ],
+            "Sec_7I_Checkbox": true,
+            "Sec_7I_Yes_Table": [{
+                    "CRM_ID": "16147816-511d-44f1-9e7a-b3506852243a",
+                    "Sec_7I_Name": "Name of Gambling Agency1",
+                    "Sec_7I_Country": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                    "Sec_7I_Date": "2020-12-31",
+                    "Sec_7I_Reason": "Reason for Exclusion1",
+                    "RowNo": 1
+                },
+                {
+                    "CRM_ID": "2eaf32ea-48ab-44a4-a543-3186685379cb",
+                    "Sec_7I_Name": "Name of Gambling Agency2",
+                    "Sec_7I_Country": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                    "Sec_7I_Date": "2020-12-31",
+                    "Sec_7I_Reason": "Reason for Exclusion2",
+                    "RowNo": 2
+                }
+            ],
+            "Sec_8A_Checkbox": true,
+            "Sec_8A_Yes_Table": [{
+                    "CRM_ID": "16147816-511d-44f1-9e7a-b3506852243a",
+                    "Sec_8A_Nature": "Nature of Lien / Debt1",
+                    "Sec_8A_Date": "2020-12-31",
+                    "Sec_8A_Country": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                    "Sec_8A_Status": "Current Status",
+                    "RowNo": 1
+                },
+                {
+                    "CRM_ID": "2eaf32ea-48ab-44a4-a543-3186685379cb",
+                    "Sec_8A_Nature": "Nature of Lien / Debt2",
+                    "Sec_8A_Date": "2020-12-31",
+                    "Sec_8A_Country": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                    "Sec_8A_Status": "Current Status",
+                    "RowNo": 2
+                }
+            ],
+            "Sec_8B_i_Checkbox": true,
+            "Sec_8B_i_Yes_Table": [{
+                    "CRM_ID": "16147816-511d-44f1-9e7a-b3506852243a",
+                    "Sec_8B_i_Date": "2020-12-31",
+                    "Sec_8B_i_Case_Number": "Docket / Case Number1",
+                    "Sec_8B_i_Name": "Name of Court1",
+                    "Sec_8B_i_Country": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                    "Sec_8B_i_Yes_Table_Checkbox_Bankrupt": true,
+                    "RowNo": 1
+                },
+                {
+                    "CRM_ID": "2eaf32ea-48ab-44a4-a543-3186685379cb",
+                    "Sec_8B_i_Date": "2020-12-31",
+                    "Sec_8B_i_Case_Number": "Docket / Case Number2",
+                    "Sec_8B_i_Name": "Name of Court2",
+                    "Sec_8B_i_Country": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                    "Sec_8B_i_Yes_Table_Checkbox_Bankrupt": true,
+                    "RowNo": 2
+                }
+            ],
+            "Sec_8B_iii_Checkbox": true,
+            "Sec_8B_iii_Yes_Table": [{
+                "CRM_ID": "6bd1198e-366d-eb11-a812-000d3ac84d40",
+                "Sec_8B_iii_Name_Of_Bank": "DBS",
+                "Sec_8B_iii_Number_Of_Payment_Months_Left": "52",
+                "Sec_8B_iii_Date_Entered": "2020-12-31",
+                "Sec_8B_iii_Name_Of_Program": "100000000",
+                "Sec_8B_iii_Total_Payable_Outstanding(SGD)": "50000",
+                "RowNo": 1
+            }],
+            "Sec_8C_Checkbox": true,
+            "Sec_8C_Yes_Table": [{
+                    "CRM_ID": "16147816-511d-44f1-9e7a-b3506852243a",
+                    "Sec_8C_Name_of_Entity": "Name of Business Entity1",
+                    "Sec_8C_Country_of_Entity": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                    "Sec_8C_Date": "2020-12-31",
+                    "Sec_8C_Case_Number": "Docket / Case Number1",
+                    "Sec_8C_Name_of_Court": "Name of Court1",
+                    "Sec_8C_Country_of_Court": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                    "Sec_8C_Name_of_Filing_Party": "Name of Filing Party1",
+                    "Sec_8C_Case_Concluded": true,
+                    "RowNo": 1
+                },
+                {
+                    "CRM_ID": "2eaf32ea-48ab-44a4-a543-3186685379cb",
+                    "Sec_8C_Name_of_Entity": "Name of Business Entity2",
+                    "Sec_8C_Country_of_Entity": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                    "Sec_8C_Date": "2020-12-31",
+                    "Sec_8C_Case_Number": "Docket / Case Number2",
+                    "Sec_8C_Name_of_Court": "Name of Court2",
+                    "Sec_8C_Country_of_Court": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                    "Sec_8C_Name_of_Filing_Party": "Name of Filing Party2",
+                    "Sec_8C_Case_Concluded": true,
+                    "RowNo": 2
+                }
+            ],
+            "Sec_8D_Checkbox": true,
+            "Sec_8D_Yes_Table": [{
+                    "CRM_ID": "16147816-511d-44f1-9e7a-b3506852243a",
+                    "Sec_8D_Title": "Title / Position Held1",
+                    "Sec_8D_Name": "Name of Business Entity1",
+                    "Sec_8D_Country": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                    "Sec_8D_Date": "2020-12-31",
+                    "Sec_8D_Reason": "Reason placed under Liquidation, Receivership, etc.",
+                    "Sec_8D_Status": "100000000",
+                    "Sec_8D_Status_Others": "",
+                    "RowNo": 1
+                },
+                {
+                    "CRM_ID": "2eaf32ea-48ab-44a4-a543-3186685379cb",
+                    "Sec_8D_Title": "Title / Position Held2",
+                    "Sec_8D_Name": "Name of Business Entity2",
+                    "Sec_8D_Country": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                    "Sec_8D_Date": "2020-12-31",
+                    "Sec_8D_Reason": "Reason placed under Liquidation, Receivership, etc.",
+                    "Sec_8D_Status": "100000021",
+                    "Sec_8D_Status_Others": "If Other Status",
+                    "RowNo": 2
+                }
+            ],
+            "Sec_8E_Checkbox": true,
+            "Sec_8E_Yes_Table": [{
+                "CRM_ID": "16147816-511d-44f1-9e7a-b3506852243a",
+                "Sec_8E_Date": "2020-12-31",
+                "Sec_8E_Case_Number": "Docket / Case Number1",
+                "Sec_8E_Name_of_Court": "Name of Court1",
+                "Sec_8E_Country_of_Court": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                "Sec_8E_Nature": "Nature of Obligation1",
+                "Sec_8E_Currency": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                "Sec_8E_Amt": "1000",
+                "Sec_8E_Exchange_Rate": "1.1234",
+                "Sec_8E_SGD": "1123.45",
+                "Sec_8E_Name_of_Holder": "Name of Holder of Obligation1",
+                "Sec_8E_Country_of_Holder": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                "Sec_8E_Under_Obligation": true,
+                "RowNo": 1
+            }],
+            "Sec_8F_Checkbox": true,
+            "Sec_8F_Yes_Table": [{
+                "CRM_ID": "16147816-511d-44f1-9e7a-b3506852243a",
+                "Sec_8F_Type": "Type of Property1",
+                "Sec_8F_Country": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                "Sec_8F_Date": "2020-12-31",
+                "Sec_8F_Reason": "Reason for Repossession1",
+                "RowNo": 1
+            }],
+            "Sec_8G_Checkbox": true,
+            "Sec_8G_Yes_Table": [{
+                    "CRM_ID": "16147816-511d-44f1-9e7a-b3506852243a",
+                    "Sec_8G_Description": "Description of Trust1",
+                    "Sec_8G_Country": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                    "Sec_8G_Name": "Name of Entity with Interests in Trust1",
+                    "RowNo": 1
+                },
+                {
+                    "CRM_ID": "2eaf32ea-48ab-44a4-a543-3186685379cb",
+                    "Sec_8G_Description": "Description of Trust2",
+                    "Sec_8G_Country": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                    "Sec_8G_Name": "Name of Entity with Interests in Trust1",
+                    "RowNo": 2
+                }
+            ],
+            "Sec_8H_Checkbox": true,
+            "Sec_8H_Yes_Table": [{
+                    "CRM_ID": "16147816-511d-44f1-9e7a-b3506852243a",
+                    "Sec_8H_Description": "Description of Trust1",
+                    "Sec_8H_Country": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                    "Sec_8H_Name": "Name of Entity with Interests in Trust1",
+                    "RowNo": 1
+                },
+                {
+                    "CRM_ID": "2eaf32ea-48ab-44a4-a543-3186685379cb",
+                    "Sec_8H_Description": "Description of Trust2",
+                    "Sec_8H_Country": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                    "Sec_8H_Name": "Name of Entity with Interests in Trust2",
+                    "RowNo": 2
+                }
+            ],
+            "Sec_8I_i_Checkbox": true,
+            "Sec_8I_i_Yes_Table": [{
+                    "CRM_ID": "16147816-511d-44f1-9e7a-b3506852243a",
+                    "Sec_8I_i_Date": "2020-12-31",
+                    "Sec_8I_i_Reason": "Reason for holding Cash / Asset1",
+                    "Sec_8I_i_Currency": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                    "Sec_8I_i_Amt": "1000",
+                    "Sec_8I_i_Exchange_Rate": "1.1234",
+                    "Sec_8I_i_SGD": "1123.45",
+                    "RowNo": 1
+                },
+                {
+                    "CRM_ID": "2eaf32ea-48ab-44a4-a543-3186685379cb",
+                    "Sec_8I_i_Date": "2020-12-31",
+                    "Sec_8I_i_Reason": "Reason for holding Cash / Asset2",
+                    "Sec_8I_i_Currency": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                    "Sec_8I_i_Amt": "1000",
+                    "Sec_8I_i_Exchange_Rate": "1.1234",
+                    "Sec_8I_i_SGD": "1123.45",
+                    "RowNo": 2
+                }
+            ],
+            "Sec_8I_ii_Checkbox": true,
+            "Sec_8I_ii_Yes_Table": [{
+                    "CRM_ID": "16147816-511d-44f1-9e7a-b3506852243a",
+                    "Sec_8I_ii_Date": "2020-12-31",
+                    "Sec_8I_ii_Reason": "Reason for holding Cash / Asset1",
+                    "Sec_8I_ii_Currency": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                    "Sec_8I_ii_Amt": "1000",
+                    "Sec_8I_ii_Exchange_Rate": "1.1234",
+                    "Sec_8I_ii_SGD": "1123.45",
+                    "RowNo": 1,
+                    "Recordstatus": 1
+                },
+                {
+                    "CRM_ID": "2eaf32ea-48ab-44a4-a543-3186685379cb",
+                    "Sec_8I_ii_Date": "2020-12-31",
+                    "Sec_8I_ii_Reason": "Reason for holding Cash / Asset2",
+                    "Sec_8I_ii_Currency": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                    "Sec_8I_ii_Amt": "1000",
+                    "Sec_8I_ii_Exchange_Rate": "1.1234",
+                    "Sec_8I_ii_SGD": "1123.45",
+                    "RowNo": 2,
+                    "Recordstatus": 1
+                }
+            ],
+            "Sec_23_Asset_Cash_Latest_Gross_Salary": "2800",
+            "Sec_23_Asset_Cash_On_Hand": "5000",
+            "Sec_23_Asset_Cash_In_Bank": [{
+                    "CRM_ID": "16147816-511d-44f1-9e7a-b3506852243a",
+                    "Sec_23_Asset_Name_Of_Bank": "OCBC",
+                    "Sec_23_Asset_Cash_SGD": "2000",
+                    "Sec_23_Asset_Cash_Percentage_Attributable": "50",
+                    "Sec_23_Asset_Cash_Account_Type": "100000001",
+                    "Sec_23_Asset_Cash_Account_Type_Others": "",
+                    "Sec_23_Asset_Cash_Amt": "1000",
+                    "RowNo": 1
+                },
+                {
+                    "CRM_ID": "2eaf32ea-48ab-44a4-a543-3186685379cb",
+                    "Sec_23_Asset_Name_Of_Bank": "DBS",
+                    "Sec_23_Asset_Cash_SGD": "",
+                    "Sec_23_Asset_Cash_Percentage_Attributable": "",
+                    "Sec_23_Asset_Cash_Account_Type": "100000003",
+                    "Sec_23_Asset_Cash_Account_Type_Others": "",
+                    "Sec_23_Asset_Cash_Amt": "2000",
+                    "RowNo": 2
+                }
+            ],
+            "Sec_23_Asset_Cash_In_Bank_SubTotal": "3000",
+            "Sec_23_Asset_Real_Estate": [{
+                    "CRM_ID": "16147816-511d-44f1-9e7a-b3506852243a",
+                    "Sec_23_Asset_Property_Type": "100000000",
+                    "Sec_23_Asset_Property_Market_Value_SGD": "1000000",
+                    "Sec_23_Asset_Property_Ownership_Percentage": "50",
+                    "Sec_23_Asset_Property_Description": "HDB",
+                    "Sec_23_Asset_Property_Amt": "500000",
+                    "RowNo": 1
+                },
+                {
+                    "CRM_ID": "2eaf32ea-48ab-44a4-a543-3186685379cb",
+                    "Sec_23_Asset_Property_Type": "100000000",
+                    "Sec_23_Asset_Property_Market_Value_SGD": "",
+                    "Sec_23_Asset_Property_Ownership_Percentage": "",
+                    "Sec_23_Asset_Property_Description": "Condo",
+                    "Sec_23_Asset_Property_Amt": "1000000",
+                    "RowNo": 2
+                }
+            ],
+            "Sec_23_Asset_Real_Estate_SubTotal": "1500000",
+            "Sec_23_Asset_Vehicle": [{
+                "CRM_ID": "16147816-511d-44f1-9e7a-b3506852243a",
+                "Sec_23_Asset_Vehicle_Type": "Car",
+                "Sec_23_Asset_Vehicle_Description": "Honda Civic",
+                "Sec_23_Asset_Vehicle_Amt": "80000",
+                "RowNo": 1
+            }],
+            "Sec_23_Asset_Vehicle_SubTotal": "80000",
+            "Sec_23_Asset_Investment": [{
+                "CRM_ID": "16147816-511d-44f1-9e7a-b3506852243a",
+                "Sec_23_Asset_Investment_Type": "Investment Type",
+                "Sec_23_Asset_Investment_Description": "SG Bonds",
+                "Sec_23_Asset_Investment_Amt": "30000",
+                "RowNo": 1
+            }],
+            "Sec_23_Asset_Investment_SubTotal": "30000",
+            "Sec_23_Asset_Others": [{
+                "CRM_ID": "16147816-511d-44f1-9e7a-b3506852243a",
+                "Sec_23_Asset_Others_Description": "Rolex Watch",
+                "Sec_23_Asset_Others_Amt": "20000",
+                "RowNo": 1
+            }],
+            "Sec_23_Asset_Others_SubTotal": "20000",
+            "Sec_23_Asset_Total": "1,640,800",
+            "Sec_23_Asset_Declaration_Date": "2020-12-31",
+            "Sec_23_Liabilities_Debt_Repayment_Program_Table": [{
+                "CRM_ID": "6bd1198e-366d-eb11-a812-000d3ac84d40",
+                "Sec_23_Liabilities_DRP_Name_Of_Bank": "DBS",
+                "Sec_23_Liabilities_DRP_Payment_Months_Left": "52",
+                "Sec_23_Liabilities_DRP_Date_Entered": "2020-12-31",
+                "Sec_23_Liabilities_DRP_Name_Of_Program": "DCP",
+                "Sec_23_Liabilities_DRP_Name_Of_Program_Others": "If Others",
+                "Sec_23_Liabilities_DRP_Total_Payable_Outstanding_SGD": "50000",
+                "RowNo": 1
+            }],
+            "Sec_23_Liabilities_DRP_SubTotal": "50000",
+            "Sec_23_Liabilities_Licensed_Money_Lenders_Checkbox": true,
+            "Sec_23_Liabilities_Licensed_Money_Lenders_Table": [{
+                "CRM_ID": "6bd1198e-366d-eb11-a812-000d3ac84d40",
+                "Sec_23_Liabilities_LML_Name": "LML Credit Fast",
+                "Sec_23_Liabilities_LML_Loan_Start_Date": "2020-12-31",
+                "Sec_23_Liabilities_LML_Period_Of_Loan_Months": "3",
+                "Sec_23_Liabilities_LML_Original_SGD": "500",
+                "Sec_23_Liabilities_LML_Total_Payable_Outstanding_SGD": "500",
+                "RowNo": 1
+            }],
+            "Sec_23_Liabilities_LML_SubTotal": "500",
+            "Sec_23_Liabilities_Unlicensed_Money_Lenders_Checkbox": true,
+            "Sec_23_Liabilities_Unlicensed_Money_Lenders_Table": [{
+                "CRM_ID": "6bd1198e-366d-eb11-a812-000d3ac84d40",
+                "Sec_23_Liabilities_UML_Name": "UML Pte Ltd",
+                "Sec_23_Liabilities_UML_Borrowing_Date": "2020-12-31",
+                "Sec_23_Liabilities_UML_Period_Of_Loan_Months": "3",
+                "Sec_23_Liabilities_UML_Original_SGD": "500",
+                "Sec_23_Liabilities_UML_Total_Payable_Outstanding_SGD": "500",
+                "RowNo": 1
+            }],
+            "Sec_23_Liabilities_UML_SubTotal": "500",
+            "Sec_23_Liabilities_Credit_Card_Table": [{
+                "CRM_ID": "6bd1198e-366d-eb11-a812-000d3ac84d40",
+                "Sec_23_Liabilities_CC_Bank_And_Account_Last4Digi": "DBS-0439",
+                "Sec_23_Liabilities_CC_Type_Of_Debt": "Instalment",
+                "Sec_23_Liabilities_CC_Instalments_Month": "4",
+                "Sec_23_Liabilities_CC_Tenor_Of_Instalment": "60",
+                "Sec_23_Liabilities_CC_Total_Payable_Outstanding_SGD": "600",
+                "RowNo": 1
+            }],
+            "Sec_23_Liabilities_CC_SubTotal": "600",
+            "Sec_23_Liabilities_Overdraft_Table": [{
+                "CRM_ID": "6bd1198e-366d-eb11-a812-000d3ac84d40",
+                "Sec_23_Liabilities_Overdraft_Bank_And_Account_Last4Digi": "DBS",
+                "Sec_23_Liabilities_Overdraft_Instalments_Month": "10",
+                "Sec_23_Liabilities_Overdraft_Tenor_Of_Instalment": "500",
+                "Sec_23_Liabilities_Overdraft_Total_Payable_Outstanding_SGD": "5000",
+                "RowNo": 1
+            }],
+            "Sec_23_Liabilities_Overdraft_SubTotal": "5000",
+            "Sec_23_Liabilities_Mortgage_Loan_Table": [{
+                "CRM_ID": "6bd1198e-366d-eb11-a812-000d3ac84d40",
+                "Sec_23_Liabilities_ML_Property_Type": "Condo",
+                "Sec_23_Liabilities_ML_Percentage_Attributable": "50",
+                "Sec_23_Liabilities_ML_Amount_SGD": "90000",
+                "Sec_23_Liabilities_ML_Total_Payable_Outstanding_SGD": "4500",
+                "RowNo": 1
+            }],
+            "Sec_23_Liabilities_ML_SubTotal": "4500",
+            "Sec_23_Liabilities_Vehicle_Loan_Table": [{
+                "CRM_ID": "6bd1198e-366d-eb11-a812-000d3ac84d40",
+                "Sec_23_Liabilities_VL_Type_Of_Vehicle": "Car",
+                "Sec_23_Liabilities_VL_Type_Of_Loan": "100000000",
+                "Sec_23_Liabilities_VL_Total_Payable_Outstanding_SGD": "0",
+                "RowNo": 1
+            }],
+            "Sec_23_Liabilities_VL_SubTotal": "0",
+            "Sec_23_Liabilities_Renovation_Loan_Table": [{
+                "CRM_ID": "6bd1198e-366d-eb11-a812-000d3ac84d40",
+                "Sec_23_Liabilities_RL_Name_Of_Bank": "OCBC",
+                "Sec_23_Liabilities_RL_Instalments_Month": "30",
+                "Sec_23_Liabilities_RL_Tenor_Of_Instalment": "500",
+                "Sec_23_Liabilities_RL_Total_Payable_Outstanding_SGD": "1500",
+                "RowNo": 1
+            }],
+            "Sec_23_Liabilities_RL_SubTotal": "1500",
+            "Sec_23_Liabilities_Study_Loan_Table": [{
+                "CRM_ID": "6bd1198e-366d-eb11-a812-000d3ac84d40",
+                "Sec_23_Liabilities_SL_Name_Of_Bank": "Maybank",
+                "Sec_23_Liabilities_SL_Instalments_Month": "10",
+                "Sec_23_Liabilities_SL_Tenor_Of_Instalment": "400",
+                "Sec_23_Liabilities_SL_Total_Payable_Outstanding_SGD": "4000",
+                "RowNo": 1
+            }],
+            "Sec_23_Liabilities_SL_SubTotal": "4000",
+            "Sec_23_Liabilities_Other_Loan_Table": [{
+                "CRM_ID": "6bd1198e-366d-eb11-a812-000d3ac84d40",
+                "Sec_23_Liabilities_OL_Description": "Description",
+                "Sec_23_Liabilities_OL_Total_Payable_Outstanding_SGD": "2000",
+                "RowNo": 1
+            }],
+            "Sec_23_Liabilities_OL_SubTotal": "2000",
+            "Sec_23_Liabilities_Total": "68600",
+            "Sec_23_Liabilities_Date_Of_Declaration": "2020-12-31"
+        }]
+    },
+    "Submit": {
+        "Sec_6A_Checkbox": true,
+        "Sec_6A_Yes_Table": [{
+                "Sec_6A_From": "2020-01-31",
+                "Sec_6A_To": "31/12/2020",
+                "Sec_6A_To_Present": false,
+                "Sec_6A_Name": "Name of Employer1",
+                "Sec_6A_Country": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                "Sec_6A_Title": "Title/Position Held1",
+                "Sec_6A_Duties": "Description of Duties1",
+                "Sec_6A_Yes_Table_Checkbox_IsGamblingRelated": true,
+                "Sec_6A_Yes_Table_Checkbox_IsIMARelated": false,
+                "RowNo": 1,
+                "CRM_ID": "16147816-511d-44f1-9e7a-b3506852243a",
+                "RecordStatus": 1
+            },
+            {
+                "Sec_6A_From": "2020-01-31",
+                "Sec_6A_To": "31/12/2020",
+                "Sec_6A_To_Present": false,
+                "Sec_6A_Name": "Name of Employer2",
+                "Sec_6A_Country": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                "Sec_6A_Title": "Title/Position Held2",
+                "Sec_6A_Duties": "Description of Duties2",
+                "Sec_6A_Yes_Table_Checkbox_IsGamblingRelated": false,
+                "Sec_6A_Yes_Table_Checkbox_IsIMARelated": true,
+                "RowNo": 2,
+                "CRM_ID": "2eaf32ea-48ab-44a4-a543-3186685379cb",
+                "RecordStatus": 1
+            }
+        ],
+        "Sec_6B_i_Checkbox": true,
+        "Sec_6B_i_Yes_Table": [{
+                "Sec_6B_i_Date": "2020-01-31",
+                "Sec_6B_i_Name": "Name of Employer1",
+                "Sec_6B_i_Country": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                "Sec_6B_i_Reason": "Reason for Disciplinary Action",
+                "RowNo": 1,
+                "CRM_ID": "16147816-511d-44f1-9e7a-b3506852243a",
+                "RecordStatus": 1
+            },
+            {
+                "Sec_6B_i_Date": "2020-01-31",
+                "Sec_6B_i_Name": "Name of Employer2",
+                "Sec_6B_i_Country": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                "Sec_6B_i_Reason": "Reason for Disciplinary Action",
+                "RowNo": 2,
+                "CRM_ID": "2eaf32ea-48ab-44a4-a543-3186685379cb",
+                "RecordStatus": 1
+            }
+        ],
+        "Sec_6B_ii_Checkbox": true,
+        "Sec_6B_ii_Yes_Table": [{
+                "RowNo": 1,
+                "CRM_ID": "16147816-511d-44f1-9e7a-b3506852243a",
+                "RecordStatus": 1
+            },
+            {
+                "RowNo": 2,
+                "CRM_ID": "2eaf32ea-48ab-44a4-a543-3186685379cb",
+                "RecordStatus": 1
+            }
+        ],
+        "Sec_6E_Checkbox": true,
+        "Sec_6E_Yes_Table": [{
+                "Sec_6E_Type": "Type of Licence1",
+                "Sec_6E_Name": "Name of Approving Organisation",
+                "Sec_6E_Country": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                "Sec_6E_Date": "2020-12-31",
+                "Sec_6E_Reason": "Reason for Denial",
+                "RowNo": 1,
+                "CRM_ID": "16147816-511d-44f1-9e7a-b3506852243a",
+                "RecordStatus": 1
+            },
+            {
+                "Sec_6E_Type": "Type of Licence 2",
+                "Sec_6E_Name": "Name of Approving Organisation",
+                "Sec_6E_Country": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                "Sec_6E_Date": "2020-12-31",
+                "Sec_6E_Reason": "Reason for Denial",
+                "RowNo": 2,
+                "CRM_ID": "2eaf32ea-48ab-44a4-a543-3186685379cb",
+                "RecordStatus": 1
+            }
+        ],
+        "Sec_6J_i_Checkbox": true,
+        "Sec_6J_i_Yes_Table": [{
+                "Sec_6J_i_Name_of_Person": "Name of Person",
+                "Sec_6J_i_Relationship": "Relationship",
+                "Sec_6J_i_Name_of_Business": "Name of Gambling Business",
+                "Sec_6J_i_Country": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                "Sec_6J_i_Title": "Title / Position Held",
+                "Sec_6J_i_Yes_Table_Checkbox_IsIMARelated": true,
+                "RowNo": 1,
+                "CRM_ID": "16147816-511d-44f1-9e7a-b3506852243a",
+                "RecordStatus": 1
+            },
+            {
+                "Sec_6J_i_Name_of_Person": "Name of Person2",
+                "Sec_6J_i_Relationship": "Relationship",
+                "Sec_6J_i_Name_of_Business": "Name of Gambling Business",
+                "Sec_6J_i_Country": "3bfe8fc1-d94a-4082-b99d-90d7322a5580",
+                "Sec_6J_i_Title": "Title / Position Held",
+                "Sec_6J_i_Yes_Table_Checkbox_IsIMARelated": true,
+                "RowNo": 2,
+                "CRM_ID": "2eaf32ea-48ab-44a4-a543-3186685379cb",
+                "RecordStatus": 1
+            }
+        ],
+        "apiId": "APHDFApplication"
+    }
+}

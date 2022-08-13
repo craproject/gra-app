@@ -1,0 +1,98 @@
+{
+  "LincenceType": 1,
+  "Applicant": [
+    {
+      "nameOfApplicant": "Vick Yong",
+      "entityType": "100000001",
+      "entityType_other": "",
+      "natureEntity": "100000001",
+      "natureEntity_other": "",
+      "uen": "123456789K",
+      "descriptionOfOperations": "Testing 1",
+      "postalCode": 123456,
+      "address": "Testing 12345",
+      "businessTelephoneNumber": 12345678,
+      "websiteAddress": "wwww.test.com",
+      "emailAddress": "test@123mail.com",
+      "emailCheckbox": true,
+      "dateOfAppointment": "2022-08-10"
+    }
+  ],
+  "Contact_Persons_Table": [
+    {
+      "salutation": "100000000",
+      "name": "Vick Yong",
+      "citizenshipType": "100000000",
+      "nric": "S1234567D1",
+      "countryIdNumber": "",
+      "country": "16147816-511d-44f1-9e7a-b3506852243a",
+      "positionHeld": "IT Manager",
+      "officePhoneNumber": 1234678,
+      "mobilePhoneNumber": 87654321,
+      "email": "test1@123mail.com",
+      "RowNo": 1
+    },
+    {
+      "salutation": "100000001",
+      "name": "Chia Kan Tan",
+      "citizenshipType": "100000000",
+      "nric": "S1234567D1",
+      "countryIdNumber": "",
+      "country": "16147816-511d-44f1-9e7a-b3506852243a",
+      "positionHeld": "Admin",
+      "officePhoneNumber": 34567890,
+      "mobilePhoneNumber": 98765432,
+      "email": "test1@123mail.com",
+      "RowNo": 2
+    }
+  ],
+  "haveEverBeenArrested": true,
+  "Arrested_Table": [
+    {
+      "nameOfCase": "Testing 1",
+      "dateOfCharge": "20220811",
+      "natureOfCharge": "Testing 2",
+      "name": "Testing 3",
+      "address": "Testing 4",
+      "disposition": "Testing 5",
+      "sentence": "Testing 6",
+      "RowNo": 1
+    }
+  ],
+  "wasSubjectOfInvestigation": true,
+  "Investigation_Table": [
+    {
+      "name": "Testing 1",
+      "detailsOfInvestigation": "Testing 2",
+      "natureOfCharge": "Testing 3",
+      "outcome": "Testing 4",
+      "investigationFrom": "20220801",
+      "investigationTo": "20220811",
+      "RowNo": 1
+    }
+  ],
+  "Particular_Executive_Table": [
+    {
+      "salutation": "100000000",
+      "name": "Testor 1",
+      "gender": "100000000",
+      "dateOfBirth": "20000101",
+      "countryOfBirth": "16147816-511d-44f1-9e7a-b3506852243a",
+      "citizenshipType": "100",
+      "nric": "Testing 1",
+      "countryIdNumber": 123456,
+      "country": "16147816-511d-44f1-9e7a-b3506852243a",
+      "nationality": "16147816-511d-44f1-9e7a-b3506852243a",
+      "mainContactNumber": 12345678,
+      "residentialAddress": "test@123mail.com",
+      "email": "test@123mail.com",
+      "positionHeld": "IT Manager",
+      "dateOfAppointment": "20220101",
+      "roles": "Testing 12345",
+      "anyArrestMade": true,
+      "anyCriminalCharges": true,
+      "anyInvestigationConducted": true,
+      "RowNo": 1
+    }
+  ]
+}
