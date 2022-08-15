@@ -2,7 +2,6 @@ import { CcipArrestedModel } from "@/models/CcipArrestedModel";
 import { CcipSubjectOfInvestigationModel } from "@/models/CcipSubjectOfInvestigationModel";
 import { ParticularExecutiveModel } from "@/models/ParticularExecutiveModel";
 import { ContactPersonModel } from "@/models/ContactPersonModel";
-import { PersonalDataModel } from "@/models/PersonalDataModel";
 
 
 import { GeneralModel } from "@/models/GeneralModel";

@@ -385,7 +385,7 @@ export default {
                 },
                 natureOfCharge: {
                     required: helpers.withMessage("This field is mandatory", required),
-                    max: maxLength(100)
+                    max: maxLength(300)
                 },
                 address: {
                     required: helpers.withMessage("This field is mandatory", required),

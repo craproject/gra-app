@@ -238,7 +238,7 @@
                         <template v-slot:activator="{ on, attrs }">
                             <v-text-field
                                 v-model="investigationToFormatted"
-                                label="Approximate Investigation period To"
+                                label="Approximate Investigation Period To"
                                 outlined
                                 append-icon="mdi-calendar"
                                 readonly

@@ -8,7 +8,7 @@ import {
     GraAppSubmitUrl,
     //craRetrieveMyInfoUrl,
     wsAuthenWidgetGetUrl,
-    wsAuthenWidgetSubmitUrl,
+    wsAuthenWidgetSubmitUrl
     //wsRetrieveMyInfoUrl
     // getAphdfUrl,
     // retrieveMyInfoUrl,
@@ -16,7 +16,7 @@ import {
 } from "@/apiServices/urls";
 
 export default {
-    commitSectionData(context,data){
+    commitSectionData(context, data) {
         let pageIndex = context.getters.getCurrentPageIndex;
         // let prevPageIndex = context.getters.getPreviousPageIndex;
 
@@ -24,43 +24,82 @@ export default {
 
         parseSectionDataAndCommitToStore(pageIndex, data);
     },
-    postGraData(context, data){
-        console.log('postGraData:',data[0])
-        let submitUrl= data[1]
-        console.log('submitUrl:',submitUrl)
-
+    postAppData(context, data) {
         return apiBase
-        .post(
-            submitUrl,
-            {
-                data: data[0],
-                url: GraAppSubmitUrl,
-                params: { data: data[0]}
-            }
-            // {
-            //     params: {
-            //         CRM_ID: context.getters.getCrmId,
-            //         currentpage: context.getters.getCurrentPageIndex,
-            //         nextpage:
-            //     }
-            // }
-        )
-        .then(response => {
-            if (!ensureSuccessResponse(response)) return;
+            .post(
+                wsAuthenWidgetSubmitUrl,
+                {
+                    data: data,
+                    url: GraAppSubmitUrl
+                    // params: {
+                    //     CRM_ID: context.getters.getCrmId,
+                    //     currentpage: data[1],
+                    //     nextpage: data[2]
+                    // }
+                }
+                // {
+                //     params: {
+                //         CRM_ID: context.getters.getCrmId,
+                //         currentpage: context.getters.getCurrentPageIndex,
+                //         nextpage:
+                //     }
+                // }
+            )
+            .then(response => {
+                if (!ensureSuccessResponse(response)) return false;
 
-            // Parse result
-            let responseData = response.data.Data[0];
+                // Parse result
+                let responseData = response.data.Data[0];
 
-            console.log('postGraData API Success: ' +JSON.stringify(responseData, null, 4));
-            return true
-            // console.log("commit to store post for section: "+parseInt(context.getters.getCurrentPageIndex));
-            // parseSectionDataAndCommitToStore(
-            //     // parseInt(context.getters.getCurrentPageIndex) + 1,
-            //     parseInt(context.getters.getCurrentPageIndex),
-            //     responseData
-            // );
-        });
+                console.log("responseData: ", JSON.stringify(responseData, null, 4));
+
+                return true;
+                // console.log("commit to store post for section: "+parseInt(context.getters.getCurrentPageIndex));
+                // parseSectionDataAndCommitToStore(
+                //     // parseInt(context.getters.getCurrentPageIndex) + 1,
+                //     parseInt(context.getters.getCurrentPageIndex),
+                //     responseData
+                // );
+            });
     },
+    // postGraData(context, data){
+    //     console.log('postGraData:',data[0])
+    //     let submitUrl= data[1]
+    //     console.log('submitUrl:',submitUrl)
+
+    //     return apiBase
+    //     .post(
+    //         submitUrl,
+    //         {
+    //             data: data[0],
+    //             url: GraAppSubmitUrl,
+    //             params: { data: data[0]}
+    //         }
+    //         // {
+    //         //     params: {
+    //         //         CRM_ID: context.getters.getCrmId,
+    //         //         currentpage: context.getters.getCurrentPageIndex,
+    //         //         nextpage:
+    //         //     }
+    //         // }
+    //     )
+    //     .then(response => {
+    //         // if (!ensureSuccessResponse(response)) return;
+
+    //         // Parse result
+    //         // let responseData = response.data.Data[0];
+    //         let responseData=response
+
+    //         console.log('postGraData API Status: ' +JSON.stringify(responseData, null, 4));
+    //         return true
+    //         // console.log("commit to store post for section: "+parseInt(context.getters.getCurrentPageIndex));
+    //         // parseSectionDataAndCommitToStore(
+    //         //     // parseInt(context.getters.getCurrentPageIndex) + 1,
+    //         //     parseInt(context.getters.getCurrentPageIndex),
+    //         //     responseData
+    //         // );
+    //     });
+    // },
 
     // Get App data
     getSectionData(context) {
@@ -96,44 +135,44 @@ export default {
                 }
                 parseSectionDataAndCommitToStore(pageIndex, responseData);
             });
-    },
+    }
 
-    postAppData(context, data) {
-        return apiBase
-            .post(
-                wsAuthenWidgetSubmitUrl,
-                {
-                    data: data[0],
-                    url: GraAppSubmitUrl,
-                    params: {
-                        CRM_ID: context.getters.getCrmId,
-                        currentpage: data[1],
-                        nextpage: data[2]
-                    }
-                }
-                // {
-                //     params: {
-                //         CRM_ID: context.getters.getCrmId,
-                //         currentpage: context.getters.getCurrentPageIndex,
-                //         nextpage:
-                //     }
-                // }
-            )
-            .then(response => {
-                if (!ensureSuccessResponse(response)) return;
+    // postAppData(context, data) {
+    //     return apiBase
+    //         .post(
+    //             wsAuthenWidgetSubmitUrl,
+    //             {
+    //                 data: data[0],
+    //                 url: GraAppSubmitUrl,
+    //                 // params: {
+    //                 //     CRM_ID: context.getters.getCrmId,
+    //                 //     currentpage: data[1],
+    //                 //     nextpage: data[2]
+    //                 // }
+    //             }
+    //             // {
+    //             //     params: {
+    //             //         CRM_ID: context.getters.getCrmId,
+    //             //         currentpage: context.getters.getCurrentPageIndex,
+    //             //         nextpage:
+    //             //     }
+    //             // }
+    //         )
+    //         .then(response => {
+    //             if (!ensureSuccessResponse(response)) return;
 
-                // Parse result
-                // let responseData = response.data.Data[0];
+    //             // Parse result
+    //             // let responseData = response.data.Data[0];
 
-                // console.log(JSON.stringify(responseData, null, 4));
-                // console.log("commit to store post for section: "+parseInt(context.getters.getCurrentPageIndex));
-                // parseSectionDataAndCommitToStore(
-                //     // parseInt(context.getters.getCurrentPageIndex) + 1,
-                //     parseInt(context.getters.getCurrentPageIndex),
-                //     responseData
-                // );
-            });
-    },
+    //             // console.log(JSON.stringify(responseData, null, 4));
+    //             // console.log("commit to store post for section: "+parseInt(context.getters.getCurrentPageIndex));
+    //             // parseSectionDataAndCommitToStore(
+    //             //     // parseInt(context.getters.getCurrentPageIndex) + 1,
+    //             //     parseInt(context.getters.getCurrentPageIndex),
+    //             //     responseData
+    //             // );
+    //         });
+    // },
 
     // Section 1
 

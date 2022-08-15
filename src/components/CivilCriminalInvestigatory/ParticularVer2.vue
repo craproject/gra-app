@@ -60,7 +60,7 @@
 
                 <!-- Actions -->
                 <template v-slot:[`item.actions`]="{ item, index }">
-                    <v-icon small class="mr-2" @click="editItem(item)"> mdi-pencil </v-icon>
+                    <v-icon small class="mr-2" @click="editItemForSec(item)"> mdi-pencil </v-icon>
 
                     <v-icon small @click="deleteRecord(index)"> mdi-delete </v-icon>
                 </template>
@@ -216,13 +216,11 @@
                     <!-- Country Identification Number -->
                     <v-text-field
                         outlined
-                        v-if="editingItem.citizenshipType === '100000003'"
+                        v-if="isCountryIdNumberRequired"
                         label="Country Identification Number"
-                        v-model="editingItem.countryIdNumber"
+                        v-model="countryIdNumberField"
                         :counter="100"
                         :error-messages="countryIdNumberValidationMessage"
-                        @input="v$.editingItem.countryIdNumber.$touch"
-                        @blur="v$.editingItem.countryIdNumber.$touch"
                     />
 
                     <!-- Country -->
@@ -424,7 +422,7 @@
 
                 <v-card-actions>
                     <v-btn color="primary" @click="cancelItem">CANCEL</v-btn>
-                    <v-btn color="primary" @click="saveItem">SAVE</v-btn>
+                    <v-btn color="primary" @click="saveItemForSect">SAVE</v-btn>
                 </v-card-actions>
             </v-card>
         </v-dialog>
@@ -468,6 +466,12 @@ export default {
             // Other controls
             showDateOfBirth: false,
             showDateOfAppointment: false,
+
+            countryIdNumberField: "",
+            nricField: "",
+
+            isCountryIdNumberRequired: true,
+
             // Table
             editingItem: Object.assign({}, new ParticularExecutiveModel()),
             particularExecutiveTable: [],
@@ -498,6 +502,14 @@ export default {
     },
     validations() {
         return {
+            countryIdNumberField: {
+                required: helpers.withMessage(
+                    "This field is mandatory",
+                    requiredIf(function() {
+                        return this.isCountryIdNumberRequired; // return true if this field is required
+                    })
+                )
+            },
             editingItem: {
                 salutation: { required: helpers.withMessage("This field is mandatory", required) },
                 name: {
@@ -539,24 +551,16 @@ export default {
                     //     )
                     // )
                 },
-                countryIdNumber: {
-                    required: helpers.withMessage(
-                        "This field is mandatory",
-                        requiredIf(function() {
-                            return this.editingItem.citizenshipType === "100000003"; // return true if this field is required
-                        })
-                    )
-                    //    required: helpers.withMessage("This field is mandatory", required)
-                },
-                country: {
-                    // required: helpers.withMessage("This field is mandatory", required)
-                    required: helpers.withMessage(
-                        "This field is mandatory",
-                        requiredIf(function() {
-                            return this.editingItem.citizenshipType == "100000003"; // return true if this field is required
-                        })
-                    )
-                },
+                // countryIdNumber: {
+                //     // required: helpers.withMessage(
+                //     //     "This field is mandatory",
+                //     //     requiredIf(function() {
+                //     //         return this.editingItem.citizenshipType == "100000003"; // return true if this field is required
+                //     //     })
+                //     // )
+                //     //    required: helpers.withMessage("This field is mandatory", required)
+                // },
+                country: { required: helpers.withMessage("This field is mandatory", required) },
                 nationality: { required: helpers.withMessage("This field is mandatory", required) },
                 mainContactNumber: {
                     required: helpers.withMessage("This field is mandatory", required),
@@ -634,7 +638,7 @@ export default {
             return this.v$.editingItem.nric.$errors.find(e => e)?.$message ?? "";
         },
         countryIdNumberValidationMessage() {
-            return this.v$.editingItem.countryIdNumber.$errors.find(e => e)?.$message ?? "";
+            return this.v$.countryIdNumberField.$errors.find(e => e)?.$message ?? "";
         },
         //countryIdNumberValidationMessage() {
         //    return this.v$.editingItem.countryIdNumber.$errors.find(e => e)?.$message ?? "";
@@ -677,9 +681,15 @@ export default {
     },
     methods: {
         clearIdentificationFields() {
+            if (this.editingItem.citizenshipType === "100000003") {
+                this.isCountryIdNumberRequired = true;
+            } else {
+                this.isCountryIdNumberRequired = false;
+            }
             this.editingItem.nric = "";
             this.editingItem.countryIdNumber = "";
-            this.editingItem.country = "";
+
+            this.countryIdNumberField = "";
         },
         // CRUD actions
         addItem() {
@@ -713,8 +723,48 @@ export default {
             return item && DateTime.fromISO(item).toFormat("dd-MM-yyyy");
         },
         updateFieldsRelatedToCitizenType() {
-            this.editingItem.nric = "";
+            this.editingItem.neditingItemric = "";
             this.editingItem.countryIdNumber = "";
+        },
+        saveItemForSect() {
+            // Validate form
+            this.v$.$validate();
+
+            console.log("validate: ", this.v$);
+            if (this.v$.editingItem.$invalid && this.v$.countryIdNumberField.$invalid) return;
+            // if(!this.v$.countryIdNumberField) return;
+
+            // Get item index
+            let itemIndex = this.table.findIndex(r => r.rowNo === this.editingItem.rowNo);
+
+            //set Binding
+            this.editingItem.countryIdNumber = this.countryIdNumberField;
+
+            // Update/Insert
+            if (itemIndex > -1) {
+                // Object.assign(this.table[itemIndex], this.editingItem);
+                this.$set(this.table, itemIndex, this.editingItem);
+            } else {
+                this.editingItem.rowNo =
+                    parseInt(this.table.reduce((max, item) => Math.max(max, item.rowNo), 0)) + 1;
+
+                this.table.push(this.editingItem);
+                console.log(this.table);
+            }
+
+            this.showDialog = false;
+            this.editingItem = {};
+            this.v$.$reset();
+        },
+        editItemForSec(item) {
+            this.editingItem = Object.assign({}, item);
+
+            this.countryIdNumberField = this.editingItem.countryIdNumber;
+            if (this.editingItem.citizenshipType === "100000003")
+                this.isCountryIdNumberRequired = true;
+            else this.isCountryIdNumberRequired = false;
+
+            this.showDialog = true;
         }
     },
     watch: {
@@ -729,6 +779,11 @@ export default {
             },
             deep: true
         }
+        // countryIdNumberField:{
+        //     handler(){
+        //         this.editingItem.countryIdNumber=this.countryIdNumberField
+        //     }
+        // }
     }
 };
 </script>

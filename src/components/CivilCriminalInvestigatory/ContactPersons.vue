@@ -304,7 +304,15 @@ export default {
                     ),
                 //    required: helpers.withMessage("This field is mandatory", required)
                 },
-                country: { required: helpers.withMessage("This field is mandatory", required) },
+                country: { 
+                    // required: helpers.withMessage("This field is mandatory", required)
+                       required: helpers.withMessage(
+                        "This field is mandatory",
+                        requiredIf(function() {
+                            return this.editingItem.citizenshipType == "100000003"; // return true if this field is required
+                        })
+                    ),
+                     },
                 positionHeld: {
                     required: helpers.withMessage("This field is mandatory", required),
                     max: maxLength(100)
@@ -371,6 +379,8 @@ export default {
         clearIdentificationFields() {
             this.editingItem.nric = "";
             this.editingItem.countryIdNumber = "";
+            this.editingItem.country = "";
+
         },
 
         // CRUD actions

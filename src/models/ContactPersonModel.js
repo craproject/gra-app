@@ -60,4 +60,28 @@ export class ContactPersonModel {
         };
     }
 
+    // static convertJson(model) {
+    //     return {
+    //         Sec_2_Yes_Table: model.Sec_2_Yes_Table.map(item => {
+    //             return {
+    //                 salutation: item.salutation,
+    //                 name: item.name,
+    //                 IdentificationType: item.citizenshipType,
+    //                 IdentificationNumber: item.nric,
+                    
+    //                 countryIdNumber: item.countryIdNumber,
+    //                 //Sec_2_Country: item.country,
+    //                 country: item.country,
+    //                 positionHeld: item.positionHeld,
+    //                 officePhoneNumber: item.officePhoneNumber,
+    //                 mobilePhoneNumber: item.mobilePhoneNumber,
+    //                 email: item.email,
+    //                 rowNo: item.rowNo
+    //                 //CRM_ID: item.crmId,
+    //                 //RecordStatus: item.recordStatus
+    //             };
+    //         })
+    //     };
+    // }
+
 }

@@ -140,6 +140,9 @@
                     <v-btn @click="next" v-if="currentIndex == 4" color="primary">
                         SUBMIT
                     </v-btn>
+                    <v-btn @click="testGraApi" v-if="isDebugMode" color="red">
+                        Test GRA API
+                    </v-btn>
                     <!-- for testing purpose in SIT API -->
                     <!-- <v-btn @click="testSection" color="primary">
                         testSection
@@ -221,9 +224,7 @@ import "@braid/vue-formulate/dist/snow.css";
 import { parse } from "query-string";
 import VueJsonPretty from "vue-json-pretty";
 import { mapGetters, mapMutations } from "vuex";
-import { getExRateData } from "./data/xRateData.js";
-import { exportPDF } from "@/libs/exportPDF.js";
-import { getAPHDFPDFTemplate } from "@/libs/pdfConfigs.js";
+
 import optionMixin from "@/mixins/optionMixin";
 import { getJsonObject } from "@/libs/jsonObject.js";
 
@@ -283,7 +284,8 @@ export default {
             apiBaseUrl: "",
             redirectionEndpoint: "",
             enableChecking: true,
-            enableAPICall: true
+            enableAPICall: true,
+            isDebugMode: false
         };
     },
     computed: {
@@ -295,38 +297,6 @@ export default {
         appTitle() {
             return this.currentIndex === 0 ? "Application Form" : this.$store.getters.getSection0;
         }
-
-        /*
-        nameList() {
-            let list = [];
-            if (!this.values) return list;
-            if (this.values["Sec_1A_Name"]) {
-                list.push(this.values["Sec_1A_Name"]);
-            }
-            if (Array.isArray(this.values["Sec_3A_Yes_Table"])) {
-                this.values["Sec_3A_Yes_Table"].forEach(element => {
-                    if (element && element["Sec_3A_Spouse_Name"]) {
-                        list.push(element["Sec_3A_Spouse_Name"]);
-                    }
-                });
-            }
-            if (Array.isArray(this.values["Sec_3B_Yes_Table"])) {
-                this.values["Sec_3B_Yes_Table"].forEach(element => {
-                    if (element && element["Sec_3B_Name"]) {
-                        list.push(element["Sec_3B_Name"]);
-                    }
-                });
-            }
-            return [...new Set(list)];
-        },
-        icList() {
-            let list = [];
-            if (!this.values) return list;
-            if (this.values["Sec_1B_Country_Identification_Number"]) {
-                list.push(this.values["Sec_1B_Country_Identification_Number"]);
-            }
-            return [...new Set(list)];
-        } */
     },
 
     methods: {
@@ -336,6 +306,95 @@ export default {
             "setPreviousPageIndex",
             "addSubmittedSection"
         ]),
+        async testGraApi() {
+            let data = {
+                LicenceType: "Data From TEST API",
+                Applicant: [
+                    {
+                        nameOfApplicant: "aaaa",
+                        entityType: "3",
+                        entityType_other: "entity type others",
+                        natureEntity: "2",
+                        natureEntity_other: "nature entity others",
+                        uen: "53361549J",
+                        descriptionOfOperations: "dasdas",
+                        postalCode: "32131",
+                        address: "aaa",
+                        businessTelephoneNumber: "32132",
+                        websiteAddress: "test.com",
+                        emailAddress: "aa@a.com",
+                        emailCheckbox: true,
+                        dateOfAppointment: "2022-08-01"
+                    }
+                ],
+                Contact_Persons_Table: [
+                    {
+                        salutation: "100000000",
+                        name: "dsadsa",
+                        citizenshipType: "100000000",
+                        nric: "S1259790H",
+                        country: "3986e8ff-7c90-ec11-9675-0050568924a1",
+                        positionHeld: "dada",
+                        officePhoneNumber: "3213",
+                        mobilePhoneNumber: "3213",
+                        email: "aa@a.com",
+                        rowNo: 1
+                    }
+                ],
+                haveEverBeenArrested: "Yes",
+                Arrested_Table: [
+                    {
+                        nameOfCase: "dsadsa2",
+                        dateOfCharge: "2022-08-01",
+                        natureOfCharge: "dsadsa2",
+                        name: "dasdas3",
+                        address: "address",
+                        disposition: "fdsda5",
+                        sentence: "dsads6",
+                        rowNo: 1
+                    }
+                ],
+                wasSubjectOfInvestigation: "Yes",
+                Investigation_Table: [
+                    {
+                        name: "jhgj1",
+                        governmentOrganization: "jjhgjg2",
+                        detailsOfInvestigation: "hjghj3",
+                        outcome: "kjhkhj4",
+                        investigationFrom: "2022-08-01",
+                        investigationTo: "2022-08-31",
+                        rowNo: 1
+                    }
+                ],
+                Particular_Executive_Table: [
+                    {
+                        salutation: "100000000",
+                        name: "eweq",
+                        gender: "100000000",
+                        dateOfBirth: "1981-08-12",
+                        countryOfBirth: "b186e8ff-7c90-ec11-9675-0050568924a1",
+                        citizenshipType: "100000000",
+                        nric: "S1259790H",
+                        country: "3f86e8ff-7c90-ec11-9675-0050568924a1",
+                        nationality: "b186e8ff-7c90-ec11-9675-0050568924a1",
+                        mainContactNumber: "321312",
+                        residentialAddress: "eqweq",
+                        email: "aa@a.com",
+                        positionHeld: "dsadsa",
+                        dateOfAppointment: "2022-08-01",
+                        roles: "dsada",
+                        anyArrestMade: "Yes",
+                        anyCriminalCharges: "Yes",
+                        anyInvestigationConducted: "Yes",
+                        rowNo: 1
+                    }
+                ]
+            };
+            if (this.enableAPICall) {
+                await this.$store.dispatch("postAppData", data);
+            }
+            // await this.$store.dispatch("postGraData", [data, this.apiBaseUrl]);
+        },
 
         completedSections(index) {
             return this.getSubmittedSections.includes(index); // this.getCurrentPageIndex > index;
@@ -466,37 +525,40 @@ export default {
 
             await currentSection.submit(currentIndex, this.lastStepperIndex);
 
-
             if (!this.enableChecking) formValid = true; //bypass Validation
 
             if (this.stepperIndex == 4 && formValid && toValidate) {
                 let data = getJsonObject();
                 console.log("form is submitted: ", data);
-                if (this.enableAPICall)
-                    await this.$store.dispatch("postGraData", [data, this.apiBaseUrl]);
-                this.dialogTitle = "Success";
-                this.dialogMsg = `Your application form has been successfully submitted. 
-Please submit the relevant supporting documents via licensing@gra.gov.sg`;
-                this.dialog = true;
+                let isSuccessful = false;
+                if (this.enableAPICall) {
+                    isSuccessful = await this.$store.dispatch("postAppData", data);
+                }
+                if (isSuccessful || !this.enableAPICall) {
+                    this.getSuccessMessage();
+                } else this.getErrorMessage();
+
                 return;
             }
 
-            return true
+            return true;
+        },
+        getSuccessMessage() {
+            this.dialogTitle = "Success";
+            this.dialogMsg = `Your application form has been successfully submitted.
+Please submit the relevant supporting documents via licensing@gra.gov.sg`;
+            this.dialog = true;
+        },
+        getErrorMessage() {
+            this.dialogTitle = "Error";
+            this.dialogMsg = `Error occured`;
+            this.dialog = true;
         },
 
         increaseStepperIndex(current) {
             return parseInt(current) + 1;
         },
-        // increaseStepperIndex() {
-        //     this.stepperIndex = parseInt(this.stepperIndex) + 1;
-        //
-        //     // Limit maximum step at 9
-        //     if (this.stepperIndex > this.lastStepperIndex) {
-        //         this.stepperIndex = this.lastStepperIndex;
-        //     }
-        //
-        //     return this.stepperIndex;
-        // },
+
         decreaseStepperIndex() {
             this.stepperIndex = parseInt(this.stepperIndex) - 1;
 
@@ -610,41 +672,6 @@ Please submit the relevant supporting documents via licensing@gra.gov.sg`;
             }
 
             return true;
-        },
-        async downloadPDF() {
-            await this.$store.dispatch("getSectionData");
-            this.dialog = false;
-            this.isLoading = true;
-            this.loadingAction = "Exporting";
-
-            let pdfTemp = getAPHDFPDFTemplate();
-            let optionSet = this.optionData;
-
-            if (!("programOptions" in optionSet)) {
-                optionSet["programOptions"] = this.programOptions;
-            }
-
-            if (!("vehicleLoanOptions" in optionSet)) {
-                optionSet["vehicleLoanOptions"] = this.vehicleLoanOptions;
-            }
-
-            if (!("raceOptions" in optionSet)) {
-                optionSet["raceOptions"] = this.raceOptions;
-            }
-
-            console.log(JSON.stringify(optionSet, null, 4));
-
-            await exportPDF(pdfTemp, optionSet, "aphdf").then(successMessage => {
-                console.log("successMessage: " + successMessage);
-                if (successMessage == "resolved") {
-                    this.isLoading = false;
-                    new Promise(resolve => setTimeout(resolve, 500));
-                    this.dialog = true;
-                } else {
-                    throw successMessage;
-                }
-                // this.closeErrorClicked();
-            });
         }
     },
     watch: {
@@ -655,62 +682,21 @@ Please submit the relevant supporting documents via licensing@gra.gov.sg`;
     // created() {},
     async beforeMount() {
         this.configData = await await (await fetch("data/grademo/configs.json")).json();
-        this.apiBaseUrl = this.configData.apiBaseUrl;
+        // this.apiBaseUrl = this.configData.apiBaseUrl;
         this.redirectionEndpoint = this.configData.redirectionEndpoint;
         this.enableChecking = this.configData.enableChecking;
         this.enableAPICall = this.configData.enableAPICall;
-        console.log(`
-        this.apiBaseUrl = ${this.apiBaseUrl};
-        this.redirectionEndpoint = ${this.redirectionEndpoint};
-        this.enableChecking = ${this.enableChecking};
-`);
+        this.isDebugMode = this.configData.isDebugMode;
+
+        //         console.log(`
+        //         this.redirectionEndpoint = ${this.redirectionEndpoint};
+        //         this.enableChecking = ${this.enableChecking};
+        // `);
     },
     async mounted() {
         logAppVersion();
 
         this.lastStepperIndex = this.$refs.appStepper.steps.length - 1;
-
-        // this.appTitle = this.$store.getters.getSection0 ===''? 'Application Form': this.$store.getters.getSection0
-
-        //this.setCrmId(this.crmId);
-        // this.xRateData = getExRateData();
-
-        // Fetch APHDF Data
-        // this.$store.dispatch("getSectionData");
-
-        // await this.verifyStatusForAllSection();
-
-        // window.loginData = window.loginData ?? {}
-        // window.loginData={
-        //     category: "100000003",
-        //     categoryName: "SEL CAT C2"
-        // };
-
-        /*console.log("loginData mounted:" + JSON.stringify(window.loginData, null, 4));
-        this.loginData.Name = window.loginData ? window.loginData.userName : "";
-        if (window.loginData) {
-            if (window.loginData.uen !== "") {
-                this.loginData.UIN_BRN = window.loginData.uen;
-            } else {
-                if (window.loginData.loginId !== "") {
-                    this.loginData.UIN_BRN = window.loginData.loginId;
-                } else {
-                    this.loginData.UIN_BRN = "";
-                }
-            }
-
-            if (window.loginData.category !== "" && window.loginData.categoryName !== "") {
-                this.loginData.category = window.loginData.category;
-                this.loginData.categoryName = window.loginData.categoryName;
-            } else {
-                this.loginData.category = "";
-                this.loginData.categoryName = "";
-            }
-        } else {
-            this.loginData.UIN_BRN = "";
-            this.loginData.category = "";
-            this.loginData.categoryName = "";
-        }*/
     }
 };
 </script>
