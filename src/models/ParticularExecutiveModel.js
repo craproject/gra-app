@@ -60,30 +60,30 @@ export class ParticularExecutiveModel {
         return {
             particularExecutiveTable: model.particularExecutiveTable.map(item => {
                 return {
-                    Salutation: item.salutation,
-                    Name: item.name,
-                    Gender: item.gender,
-                    DateOfBirth: item.dateOfBirth,
-                    CountryOfBirth: item.countryOfBirth,
-                    IdentificationType: item.citizenshipType,
-                    IdentificationNumber: item.nric,
+                    salutation: item.salutation,
+                    name: item.name,
+                    gender: item.gender,
+                    dateOfBirth: item.dateOfBirth,
+                    countryOfBirth: item.countryOfBirth,
+                    citizenshipType: item.citizenshipType,
+                    nric: item.nric,
                     
-                    CountryIdNumber: item.countryIdNumber,
+                    countryIdNumber: item.countryIdNumber,
                     //Sec_4_Country: item.country,
-                    Country: item.country,
-                    Nationality: item.nationality,
-                    MainContactNumber: item.mainContactNumber,
-                    ResidentialAddress: item.residentialAddress,
+                    country: item.country,
+                    nationality: item.nationality,
+                    mainContactNumber: item.mainContactNumber,
+                    residentialAddress: item.residentialAddress,
                     
-                    Email: item.email,
-                    PositionHeld: item.positionHeld,
+                    email: item.email,
+                    positionHeld: item.positionHeld,
 
-                    DateOfAppointment: item.dateOfAppointment,
+                    dateOfAppointment: item.dateOfAppointment,
 
-                    Roles: item.roles,
-                    AnyArrestMade: item.anyArrestMade,
-                    AnyCriminalCharges: item.anyCriminalCharges,
-                    AnyInvestigationConducted: item.anyInvestigationConducted,
+                    roles: item.roles,
+                    anyArrestMade: item.anyArrestMade,
+                    anyCriminalCharges: item.anyCriminalCharges,
+                    anyInvestigationConducted: item.anyInvestigationConducted,
                     rowNo: item.rowNo
                     //CRM_ID: item.crmId,
                     //RecordStatus: item.recordStatus
