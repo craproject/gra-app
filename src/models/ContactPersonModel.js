@@ -11,6 +11,28 @@ export class ContactPersonModel {
     mobilePhoneNumber;
     email;
 
+    static convertJson(model) {
+        return {
+            Contact_Persons_Table: model.Sec_2_Yes_Table.map(item => {
+                return {
+                    salutation: item.salutation,
+                    name: item.name,
+                    citizenshipType: item.citizenshipType,
+                    nric: item.nric,
+                    
+                    countryIdNumber: item.countryIdNumber,
+                    country: item.country,
+                    positionHeld: item.positionHeld,
+                    officePhoneNumber: item.officePhoneNumber,
+                    mobilePhoneNumber: item.mobilePhoneNumber,
+                    email: item.email,
+                    rowNo: item.rowNo
+                };
+            })
+        };
+    }
+
+
     static parseFromJson(data) {
         return {
             //haveEverBeenArrested: data.Sec_2_Checkbox,

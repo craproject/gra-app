@@ -11,6 +11,22 @@ export class CcipSubjectOfInvestigationModel {
     investigationFrom;
     investigationTo;
 
+    static convertJson(model) {
+        return {
+            subjectOfInvestigationTable: model.subjectOfInvestigationTable.map(item => {
+                return {
+                    name: item.name,
+                    governmentOrganization: item.governmentOrganization,
+                    detailsOfInvestigation: item.detailsOfInvestigation,
+                    outcome: item.outcome,
+                    investigationFrom: item.investigationFrom,
+                    investigationTo: item.investigationTo,
+                    rowNo: item.rowNo
+                };
+            })
+        };
+    }
+
     static parseFromJson(data) {
         return {
             wasSubjectOfInvestigation: data.Sec_3B_Checkbox,
