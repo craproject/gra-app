@@ -67,7 +67,7 @@ export function getJsonObject() {
                 WebsiteAddress: store.getters.getSection1.websiteAddress,
                 EmailAddress: store.getters.getSection1.emailAddress,
                 EmailCheckbox: store.getters.getSection1.emailCheckbox,
-                DateOfAppointment: store.getters.getSection1.dateOfAppointment
+                DateOfIncorporation: store.getters.getSection1.dateOfAppointment
             }
         ],
         Contact_Persons_Table: store.getters.getSection2A.Sec_2_Yes_Table,

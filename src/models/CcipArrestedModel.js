@@ -45,7 +45,7 @@ export class CcipArrestedModel {
             Sec_3A_Checkbox: model.haveEverBeenArrested,
             Sec_3A_Yes_Table: model.arrestedTable.map(item => {
                 return {
-                    Sec_3A_Name_of_Case: item.natureOfCharge,
+                    Sec_3A_Name_of_Case: item.nameOfCase,
                     //Sec_3A_Date_of_Arrest: item.dateOfArrest,
                     Sec_3A_Date_of_Charge: item.dateOfCharge,
                     Sec_3A_Nature_of_Charge: item.natureOfCharge,

@@ -35,45 +35,47 @@ export default {
             this.showDialog = false;
             this.v$.$reset();
         },
-        // deleteItem(tableName) {
-        //     var item = this.table[this.deleteIndex];
-        //     if(item.crmId){
-        //         console.log(tableName);
-        //         this.isLoading = true;
-        //         // let url = wsAuthenWidgetDeletetUrl; // API Widget
-        //         let url = wsAuthenWidgetSubmitUrl
-        //         var TripObject = {
-        //             url: tableDeleteAPI_NEC, // NEC Url
-        //             data: { CRM_ID: item.crmId, Table_Name: tableName },
-        //         };
-        //         axios({
-        //             method: "post",
-        //             url: url,
-        //             data: TripObject,
-        //             dataType: "json",
-        //         })
-        //             .then((response) => {
-        //                 let data = response.data;
-        //                 if (data["IsSuccessful"] && data["Data"][0]) {
-        //                     this.table.splice(this.deleteIndex, 1);
-        //                 }
-        //                 else{
-        //                     this.error = data["Errors"];
-        //                     // alert("Error: " + this.error[0]["ErrorMessage"]);
-        //                     store.commit("addAppError", data.Errors[0]["ErrorMessage"]);
-        //                 }
-        //                 this.isLoading = false;
-        //             })
-        //             .catch((e) => {
-        //                 this.isLoading = false;
-        //                 store.commit("addAppError", "Server return invalid message");
-        //             });
-        //     }
-        //     else
-        //     {
-        //         this.table.splice(this.deleteIndex, 1);
-        //     }
-        // },
+        deleteItem(tableName) {
+            var item = this.table[this.deleteIndex];
+            this.table.splice(this.deleteIndex, 1);
+
+            // if(item.crmId){
+            //     console.log(tableName);
+            //     this.isLoading = true;
+            //     // let url = wsAuthenWidgetDeletetUrl; // API Widget
+            //     let url = wsAuthenWidgetSubmitUrl
+            //     var TripObject = {
+            //         url: tableDeleteAPI_NEC, // NEC Url
+            //         data: { CRM_ID: item.crmId, Table_Name: tableName },
+            //     };
+            //     axios({
+            //         method: "post",
+            //         url: url,
+            //         data: TripObject,
+            //         dataType: "json",
+            //     })
+            //         .then((response) => {
+            //             let data = response.data;
+            //             if (data["IsSuccessful"] && data["Data"][0]) {
+            //                 this.table.splice(this.deleteIndex, 1);
+            //             }
+            //             else{
+            //                 this.error = data["Errors"];
+            //                 // alert("Error: " + this.error[0]["ErrorMessage"]);
+            //                 store.commit("addAppError", data.Errors[0]["ErrorMessage"]);
+            //             }
+            //             this.isLoading = false;
+            //         })
+            //         .catch((e) => {
+            //             this.isLoading = false;
+            //             store.commit("addAppError", "Server return invalid message");
+            //         });
+            // }
+            // else
+            // {
+            //     this.table.splice(this.deleteIndex, 1);
+            // }
+        },
 
         saveItem() {
             // Validate form
