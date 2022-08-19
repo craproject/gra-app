@@ -14,6 +14,23 @@ export class CcipArrestedModel {
     //outcomeOthers;
     sentence;
 
+    static convertJson(model) {
+        return {
+            arrestedTable: model.arrestedTable.map(item => {
+                return {
+                    nameOfCase: item.nameOfCase,
+                    dateOfCharge: item.dateOfCharge,
+                    natureOfCharge: item.natureOfCharge,
+                    name: item.name,
+                    address: item.address,
+                    disposition: item.disposition,
+                    sentence: item.sentence,
+                    rowNo: item.RowNo
+                };
+            })
+        };
+    }
+
     static parseFromJson(data) {
         return {
             haveEverBeenArrested: data.Sec_3A_Checkbox,

@@ -20,6 +20,35 @@ export class ParticularExecutiveModel {
     anyCriminalCharges;
     anyInvestigationConducted;
 
+    static convertJson(model) {
+        return {
+            particularExecutiveTable: model.particularExecutiveTable.map(item => {
+                return {
+                    salutation: item.salutation,
+                    name: item.name,
+                    gender: item.gender,
+                    dateOfBirth: item.dateOfBirth,
+                    countryOfBirth: item.countryOfBirth,
+                    citizenshipType: item.citizenshipType,
+                    nric: item.nric,
+                    countryIdNumber: item.countryIdNumber,
+                    country: item.country,
+                    nationality: item.nationality,
+                    mainContactNumber: item.mainContactNumber,
+                    residentialAddress: item.residentialAddress,
+                    email: item.email,
+                    positionHeld: item.positionHeld,
+                    dateOfAppointment: item.dateOfAppointment,
+                    roles: item.roles,
+                    anyArrestMade: item.anyArrestMade,
+                    anyCriminalCharges: item.anyCriminalCharges,
+                    anyInvestigationConducted: item.anyInvestigationConducted,
+                    rowNo: item.rowNo
+                };
+            })
+        };
+    }
+
     static parseFromJson(data) {
         return {
             //haveEverBeenArrested: data.Sec_4_Checkbox,

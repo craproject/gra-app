@@ -16,6 +16,25 @@ export class ApplicantDataModel {
     emailCheckbox;
     dateOfAppointment;
 
+    static convertJson(model) {
+        return {
+            NameOfApplicant: model.nameOfApplicant,
+            EntityType: model.entityType,
+            EntityType_Other: model.entityType_other,
+            NatureEntity: model.natureEntity,
+            NatureEntity_other: model.natureEntity_other,
+            Uen: model.uen,
+            DescriptionOfOperations: model.descriptionOfOperations,
+            PostalCode: model.postalCode,
+            Address: model.address,
+            BusinessTelephoneNumber: model.businessTelephoneNumber,
+            WebsiteAddress: model.websiteAddress,
+            EmailAddress: model.emailAddress,
+            EmailCheckbox: model.emailCheckbox,
+            DateOfIncorporation: model.dateOfAppointment
+        };
+    }
+
     static parseFromJson(data) {
         return {
             NameOfApplicant: data.nameOfApplicant,
